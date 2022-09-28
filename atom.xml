@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.kamasylvia.com</id>
+    <title>༄༊࿆澹台จุ๊บ听雨ོྂཾ࿆࿐｜Kamasylvia</title>
+    <updated>2022-09-28T00:56:05.468Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://www.kamasylvia.com"/>
+    <link rel="self" href="https://www.kamasylvia.com/atom.xml"/>
+    <subtitle>欢迎来到时空管理局银河系分局猎户座悬臂太阳系分站驻第三行星办事处。</subtitle>
+    <logo>https://www.kamasylvia.com/images/avatar.png</logo>
+    <icon>https://www.kamasylvia.com/favicon.ico</icon>
+    <rights>All rights reserved 2022, ༄༊࿆澹台จุ๊บ听雨ོྂཾ࿆࿐｜Kamasylvia</rights>
+    <entry>
+        <title type="html"><![CDATA[[Development] - Roadmap]]></title>
+        <id>https://www.kamasylvia.com/post/development-roadmap/</id>
+        <link href="https://www.kamasylvia.com/post/development-roadmap/">
+        </link>
+        <updated>2021-12-05T08:34:02.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="introduction">Introduction</h1>
+<p>These images are from <a href="https://roadmap.sh/backend">roadmap.sh</a></p>
+<h1 id="frontend">Frontend</h1>
+<figure data-type="image" tabindex="1"><img src="https://www.kamasylvia.com/post-images/1638693452161.png" alt="" loading="lazy"></figure>
+<h1 id="backend">Backend</h1>
+<figure data-type="image" tabindex="2"><img src="https://www.kamasylvia.com/post-images/1638693430091.png" alt="" loading="lazy"></figure>
+<h1 id="devops">DevOps</h1>
+<figure data-type="image" tabindex="3"><img src="https://www.kamasylvia.com/post-images/1638693486260.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[Dapr] - gRPC with Pub/Sub]]></title>
+        <id>https://www.kamasylvia.com/post/dapr-grpc-with-pubsub/</id>
+        <link href="https://www.kamasylvia.com/post/dapr-grpc-with-pubsub/">
+        </link>
+        <updated>2021-12-05T08:31:34.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>我在 components 配置文件夹下写了 <code>pubsub.yaml</code> 但是在 gRPC 服务中未使用发布订阅。在启动服务的时候报错</p>
+<pre><code>Error status code 'Unimplemented' raised.
+Grpc.Core.RpcException: Status(StatusCode=&quot;Unimplemented&quot;, Detail=&quot;&quot;)
+   at Dapr.AppCallback.Autogen.Grpc.v1.AppCallback.AppCallbackBase.ListTopicSubscriptions(Empty request, ServerCallContext context)
+</code></pre>
+<h1 id="正文">正文</h1>
+<p>这是因为 dapr 认为我们的 gRPC 服务使用了发布订阅，但是没有重写 <code>ListTopicSubscriptions</code> 方法。解决方案就是在服务中重写 <code>ListTopicSubscriptions</code>。 或者不使用含有 <code>pubsub.yaml</code> 的 <code>components-path</code></p>
+<pre><code class="language-c#">using System;
+using System.Threading.Tasks;
+using Dapr.AppCallback.Autogen.Grpc.v1;
+using Dapr.Client.Autogen.Grpc.v1;
+using Google.Protobuf.WellKnownTypes;
+using Grpc.Core;
+using MediatR;
+using static Dapr.AppCallback.Autogen.Grpc.v1.AppCallback;
+
+namespace FileService.Services.GrpcService
+{
+    public class GrpcService : AppCallbackBase
+    {
+        private readonly IMediator _mediator;
+
+        public GrpcService(IMediator mediator)
+        {
+            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        }
+
+        public override async Task&lt;InvokeResponse&gt; OnInvoke(
+            InvokeRequest request,
+            ServerCallContext context
+        )
+        {
+			// Implement OnIvoke
+        }
+
+        public override Task&lt;ListTopicSubscriptionsResponse&gt; ListTopicSubscriptions(Empty request, ServerCallContext context)
+        {
+			// implement ListTopicSubscriptions to register subscriber
+        }
+    }
+}
+</code></pre>
+<p>最后别忘了在 <code>startup</code> 中注册服务</p>
+<pre><code class="language-c#">public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+
+	app.UseEndpoints(
+		endpoints =&gt;
+		{
+			endpoints.MapGrpcService&lt;GrpcService&gt;();
+		}
+	);
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[WebAPI] - 枚举类型和字符串相互转换]]></title>
+        <id>https://www.kamasylvia.com/post/webapi-convert-enum2string/</id>
+        <link href="https://www.kamasylvia.com/post/webapi-convert-enum2string/">
+        </link>
+        <updated>2021-10-29T08:50:30.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>我们想要一个数据在传递请求和应答的 json 时是 <code>string</code> 类型，在存储时是 <code>enum</code> 类型。</p>
+<h1 id="正文">正文</h1>
+<p>首先创建一个枚举类型</p>
+<pre><code class="language-c#">public enum Arrow
+{
+	Up,
+	Down,
+	Left,
+	Right
+}
+</code></pre>
+<p>再创建一个实体类</p>
+<pre><code class="language-c#">public class ArrowEntity
+{
+	public Arrow Arrow {get; set;}
+}
+</code></pre>
+<p>然后创建请求类</p>
+<pre><code class="language-c#">using System.ComponentModel.DataAnnotations;
+
+public record ArrowRequest
+{
+	[EnumDataType(typeof(Arrow))]
+	public Arrow Arrow {get; set;}
+}
+</code></pre>
+<p>最后创建应答类</p>
+<pre><code class="language-c#">using System.ComponentModel.DataAnnotations;
+
+public record ArrowResponse
+{
+	[EnumDataType(typeof(Arrow))]
+	public Arrow Arrow {get; set;}
+}
+</code></pre>
+<p>AutoMapper 配置</p>
+<pre><code class="language-c#">public class AutoMapperProfiles : Profile
+{
+	public AutoMapperProfiles()
+	{
+		CreateMap&lt;ArrowRequest, ArrowEntity&gt;();
+		CreateMap&lt;ArrowEntity, ArrowResponse&gt;();
+	}
+}
+</code></pre>
+<p><code>Startup.cs</code> 配置</p>
+<pre><code class="language-c#">public void ConfigureServices(IServiceCollection services)
+{
+	services
+		.AddControllers()
+		.AddJsonOptions(
+			options =&gt;
+			{
+				options.JsonSerializerOptions.Converters
+					.Add(new JsonStringEnumConverter());
+			}
+		);
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[WebAPI] - 全局异常处理]]></title>
+        <id>https://www.kamasylvia.com/post/webapi-exception-filter/</id>
+        <link href="https://www.kamasylvia.com/post/webapi-exception-filter/">
+        </link>
+        <updated>2021-10-27T02:20:03.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>全局异常处理可以有效中断程序并返回自定义格式的报错样式。常用方法是通过筛选器 (<code>ExceptionFilter</code>) 或中间件 (<code>app.UseExceptionHandler</code>)。官方文档是推荐用中间件，但个人喜欢用筛选器。</p>
+<h1 id="正文">正文</h1>
+<ol>
+<li>在项目中新建 <code>Infrastructure</code> 文件夹。如已存在则跳过。</li>
+<li>在 <code>Infrastructure</code> 下新建 <code>Exceptions</code>、<code>ActionResults</code> 和 <code>Filters</code> 两个文件夹。如已存在则跳过。</li>
+<li>在 <code>Infrastructure/Exceptions/</code> 下创建自定义异常的基类和其他子类。这样做是为了编写的时候可以让 IDE 根据父类快速创建子类的构造函数。</li>
+</ol>
+<pre><code class="language-c#">using System;
+
+namespace MyProject.API.Infrastructure.Exceptions
+{
+    public abstract class CustomBaseException : Exception
+    {
+        public CustomBaseException() { }
+
+        public CustomBaseException(string message) : base(message) { }
+
+        public CustomBaseException(string message, Exception innerException)
+            : base(message, innerException) { }
+    }
+	
+    public class NotFoundException : CustomBaseException
+    {
+        public NotFoundException() { }
+
+        public NotFoundException(string message) : base(message) { }
+
+        public NotFoundException(string message, Exception innerException)
+            : base(message, innerException) { }
+    }
+}
+</code></pre>
+<ol start="4">
+<li>在 <code>Infrastructure/ActionResult/</code> 下创建返回结果的样式：</li>
+</ol>
+<pre><code class="language-c#">namespace MyProject.API.Infrastructure.ActionResults
+{
+    public class ApiResult : ActionResult
+    {
+        public int? StatusCode { get; set; }
+
+        public object Data { get; set; }
+
+        public object Errors { get; set; }
+
+        public bool Succeeded { get; set; }
+}
+</code></pre>
+<ol start="5">
+<li>在 <code>Infrastructure/Filters/</code> 下创建自定义的异常筛选器。示例中为了给未来可能添加的 <code>await</code> 方法做预留，重写 <code>OnExceptionAsync</code> 却执行同步方法。如果确定没有异步方法，重写 <code>OnException</code> 即可。</li>
+</ol>
+<pre><code class="language-c#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using MyProject.API.Infrastructure.ActionResults;
+using MyProject.API.Infrastructure.Exceptions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Logging;
+
+namespace MyProject.API.Infrastructure.Filters
+{
+    public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
+    {
+        private readonly ILogger&lt;CustomExceptionFilterAttribute&gt; _logger;
+
+        public CustomExceptionFilterAttribute(ILogger&lt;CustomExceptionFilterAttribute&gt; logger)
+        {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
+
+        public override async Task OnExceptionAsync(ExceptionContext context)
+        {
+            string methodInfo =
+                $&quot;{context.RouteData.Values[&quot;controller&quot;] as string}Controller.{context.RouteData.Values[&quot;action&quot;] as string}:{context.HttpContext.Request.Method}&quot;;
+
+            _logger.LogError(context.Exception, &quot;执行{0}时发生错误！&quot;, methodInfo);
+
+            var apiResult = new ApiResult { Succeeded = false };
+            switch (context.Exception)
+            {
+                case BadRequestException ex:
+                    apiResult.StatusCode = StatusCodes.Status400BadRequest;
+                    apiResult.Errors = string.IsNullOrEmpty(ex.Message)
+                        ? &quot;Bad request error.&quot;
+                        : ex.Message;
+                    break;
+                case NotFoundException ex:
+                    apiResult.StatusCode = StatusCodes.Status404NotFound;
+                    apiResult.Errors = string.IsNullOrEmpty(ex.Message)
+                        ? &quot;Could not find the entity.&quot;
+                        : ex.Message;
+                    break;
+                case DatabaseUpdateException ex:
+                    apiResult.StatusCode = StatusCodes.Status500InternalServerError;
+                    apiResult.Errors = string.IsNullOrEmpty(ex.Message)
+                        ? &quot;Database Update Error.&quot;
+                        : ex.Message;
+                    break;
+                case RemoteServiceException ex:
+                    apiResult.StatusCode = StatusCodes.Status502BadGateway;
+                    apiResult.Errors = string.IsNullOrEmpty(ex.Message)
+                        ? &quot;Remote service error.&quot;
+                        : ex.Message;
+                    break;
+                case ConflictException ex:
+                    apiResult.StatusCode = StatusCodes.Status409Conflict;
+                    apiResult.Errors = string.IsNullOrEmpty(ex.Message)
+                        ? &quot;Conflict error.&quot;
+                        : ex.Message;
+                    break;
+                default:
+                    apiResult.StatusCode = StatusCodes.Status500InternalServerError;
+                    apiResult.Errors = &quot;Internal Server Error.&quot;;
+                    break;
+            }
+
+            context.Result = new ObjectResult(apiResult) { StatusCode = apiResult.StatusCode };
+        }
+    }
+}
+</code></pre>
+<ol start="6">
+<li>在 <code>Startup.cs</code> 中注册全局异常处理：</li>
+</ol>
+<pre><code class="language-c#">public void ConfigureServices(IServiceCollection services)
+{
+	services.AddControllers(
+		options =&gt;
+		{
+			// 注册全局异常筛选器
+			options.Filters.Add&lt;CustomExceptionFilterAttribute&gt;();
+		}
+	);
+	
+	...
+}
+</code></pre>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://docs.microsoft.com/zh-cn/aspnet/core/mvc/controllers/filters?view=aspnetcore-5.0#action-filters">ASP.NET Core 中的筛选器 | Microsoft Docs</a></li>
+<li><a href="https://www.cnblogs.com/gygtech/p/14478712.html#:~:text=%E5%BC%82%E5%B8%B8%E8%BF%87%E6%BB%A4%E5%99%A8%E6%98%AF%E4%B8%80%E7%A7%8D%E5%8F%AF%E4%BB%A5%E5%9C%A8%20WebAPI%20%E4%B8%AD%E6%8D%95%E8%8E%B7%E9%82%A3%E4%BA%9B%E6%9C%AA%E5%BE%97%E5%88%B0%E5%A4%84%E7%90%86%E7%9A%84%E5%BC%82%E5%B8%B8%E7%9A%84%E8%BF%87%E6%BB%A4%E5%99%A8%EF%BC%8C%E8%A6%81%E6%83%B3%E5%88%9B%E5%BB%BA%E5%BC%82%E5%B8%B8%E8%BF%87%E6%BB%A4%E5%99%A8%EF%BC%8C%E4%BD%A0%E9%9C%80%E8%A6%81%E5%AE%9E%E7%8E%B0%20IExceptionFilter%20%E6%8E%A5%E5%8F%A3%EF%BC%8C%E4%B8%8D%E8%BF%87%E8%BF%99%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%AF%94%E8%BE%83%E9%BA%BB%E7%83%A6%EF%BC%8C%E6%9B%B4%E5%BF%AB%E6%8D%B7%E7%9A%84%E6%96%B9%E6%B3%95%E6%98%AF%E7%9B%B4%E6%8E%A5%E7%BB%A7%E6%89%BF%20ExceptionFilterAttribute%20%E5%B9%B6%E9%87%8D%E5%86%99%E9%87%8C%E9%9D%A2%E7%9A%84,OnException%20%28%29%20%E6%96%B9%E6%B3%95%E5%8D%B3%E5%8F%AF%EF%BC%8C%E8%BF%99%E6%98%AF%E5%9B%A0%E4%B8%BA%20ExceptionFilterAttribute%20%E7%B1%BB%E6%9C%AC%E8%BA%AB%E5%B0%B1%E5%AE%9E%E7%8E%B0%E4%BA%86%20IExceptionFilter%20%E6%8E%A5%E5%8F%A3">.net5 - 创建Web.Api项目（五）异常过滤器【自定义异常/统一异常处理】 - gygtech - 博客园</a></li>
+<li><a href="https://www.cnblogs.com/kasnti/p/12247468.html">ASP.NET Core搭建多层网站架构【11-WebApi统一处理返回值、异常】 - kasnti - 博客园</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[WebAPI] - 自动依赖注入]]></title>
+        <id>https://www.kamasylvia.com/post/webapi-automated-dependancy-injection/</id>
+        <link href="https://www.kamasylvia.com/post/webapi-automated-dependancy-injection/">
+        </link>
+        <updated>2021-10-20T07:53:18.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>.NET Core 自带 DI（包括Autofac）的常规用法：每写一个接口就需要注册一次，以备在使用时自动注入实例。在写常规代码时这样重复的步骤过于繁琐。</p>
+<p>批量注入依赖一般是用 Autofac 实现的，方法是</p>
+<pre><code class="language-c#">builder
+    .RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+    .Where(t =&gt;
+        t.Name.EndsWith(&quot;Repository&quot;) || t.Name.EndsWith(&quot;Service&quot;))
+    .AsSelf()
+    .AsImplementedInterfaces()
+    .PropertiesAutowired(PropertyWiringOptions.PreserveSetValues)
+    .InstancePerDependency();
+</code></pre>
+<p>这里介绍一种使用 .NET Core DI 实现自动依赖注入的方法。。</p>
+<h1 id="正文">正文</h1>
+<ol>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/attributes/creating-custom-attributes">创建自定义特性</a>：</li>
+</ol>
+<pre><code class="language-c#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace MyProject.API.Infrastructure.Attributes
+{
+    [AttributeUsage(AttributeTargets.Class)]
+    public class CustomDependencyAttribute : Attribute
+    {
+        public ServiceLifetime Lifetime { get; set; } = ServiceLifetime.Transient;  // 默认生命周期和 .NET Core DI 一致
+        public CustomDependencyAttribute(ServiceLifetime serviceLifetime)
+        {
+            Lifetime = serviceLifetime;
+        }
+    }
+}
+</code></pre>
+<ol start="2">
+<li>给接口实现类添加该属性，并定义生命周期</li>
+</ol>
+<pre><code class="language-c#">    [CustomDependency(ServiceLifetime.Scoped)]
+    public class ActivityRepository : RepositoryBase&lt;Activity&gt;, IActivityRepository
+    {
+        public ActivityRepository(ApplicationDbContext context) : base(context) { }
+        ...
+    }
+</code></pre>
+<ol start="3">
+<li>创建 <code>IServiceCollection</code> 的扩展方法：</li>
+</ol>
+<pre><code class="language-c#">using System;
+using System.Linq;
+using System.Reflection;
+using MyProject.API.Infrastructure.Attributes;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace MyProject.API.Extensions
+{
+    public static class IServiceCollectionDependencyInjectionExtension
+    {
+        public static void AddCustomDependencies(
+            this IServiceCollection services
+        )
+        {
+            services.RegisterLifetimesByAttribute(ServiceLifetime.Transient);
+            services.RegisterLifetimesByAttribute(ServiceLifetime.Scoped);
+            services.RegisterLifetimesByAttribute(ServiceLifetime.Singleton);
+        }
+
+        /*
+        利用反射取所有类型时，用的是
+            AppDomain.CurrentDomain.GetAssemblies().SelectMany(x =&gt; x.GetTypes())
+        如果是多项目分层的话要替换成
+            Assembly.GetEntryAssembly().GetReferencedAssemblies()
+                .Select(Assembly.Load).SelectMany(x =&gt; x.DefinedTypes)
+        */
+        private static void RegisterLifetimesByAttribute(
+            this IServiceCollection services,
+            ServiceLifetime serviceLifetime
+        ) =&gt;
+            /* 
+            Assembly
+                .GetEntryAssembly()
+                .GetReferencedAssemblies()
+                .Select(Assembly.Load)
+                .SelectMany(asm =&gt; asm.DefinedTypes)
+            */
+            AppDomain
+                .CurrentDomain
+                .GetAssemblies()
+                .SelectMany(x =&gt; x.GetTypes())
+                .Where(implementer =&gt;
+                    implementer
+                        .GetCustomAttributes(typeof (CustomDependencyAttribute),
+                        false)
+                        .Length &gt;
+                    0 &amp;&amp;
+                    implementer
+                        .GetCustomAttribute&lt;CustomDependencyAttribute&gt;()
+                        .Lifetime ==
+                    serviceLifetime &amp;&amp;
+                    implementer.IsClass &amp;&amp;
+                    !implementer.IsAbstract)
+                .ToList()
+                .ForEach(implementerItem =&gt;
+                    implementerItem
+                        .GetInterfaces()
+                        .ToList()
+                        .ForEach(interfaceItem =&gt;
+                        {
+                            switch (serviceLifetime)
+                            {
+                                case ServiceLifetime.Transient:
+                                    services.AddTransient (
+                                        interfaceItem,
+                                        implementerItem
+                                    );
+                                    break;
+                                case ServiceLifetime.Scoped:
+                                    services.AddScoped (
+                                        interfaceItem,
+                                        implementerItem
+                                    );
+                                    break;
+                                case ServiceLifetime.Singleton:
+                                    services.AddSingleton (
+                                        interfaceItem,
+                                        implementerItem
+                                    );
+                                    break;
+                            }
+                        }));
+    }
+}
+</code></pre>
+<ol start="4">
+<li>在 <code>Startup.cs</code> 中批量注入：</li>
+</ol>
+<pre><code class="language-c#">public void ConfigureServices(IServiceCollection services)
+{
+    ...
+    services.AddCustomDependencies();
+    ...
+}
+</code></pre>
+<ol start="5">
+<li>需要额外配置的依赖不要自动注入，只需要在第二步不在实现类上标注 <code>[CustomDependency]</code> 特性，然后在 <code>Startup.cs</code> 中用默认 DI 手动注入即可。例如：</li>
+</ol>
+<pre><code class="language-c#">public void ConfigureServices(IServiceCollection services)
+{
+    ...
+        // 启用创建短 ID 服务
+        services.AddSingleton&lt;IIdGeneratorService&gt;(
+            new IdGeneratorService(
+                new IdGeneratorOptions(1) { WorkerIdBitLength = 1, SeqBitLength = 3 }
+            )
+        );
+    ...
+}
+</code></pre>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://www.cnblogs.com/Chary/p/11351457.html">深入浅出依赖注入容器——Autofac - CharyGao - 博客园</a></li>
+<li><a href="https://www.cnblogs.com/willardzmh/articles/14393696.html">.net core 批量注入（自带DI，AutoFac） - willardzmh - 博客园</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[DevOps] - 自动格式化代码并推送回远程仓库]]></title>
+        <id>https://www.kamasylvia.com/post/devops-auto-format/</id>
+        <link href="https://www.kamasylvia.com/post/devops-auto-format/">
+        </link>
+        <updated>2021-10-13T02:19:24.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>每个程序员的代码风格都不一样，为了大括号要不要另起一行甚至能发动圣战。因此，保持远程仓库的风格一致性是很有必要的，也是 CI 的基本功能之一。本篇继续使用 Azure DevOps Pipelines 进行 CI 配置。</p>
+<h1 id="正文">正文</h1>
+<p>本文使用的 formatter 是 <a href="https://github.com/belav/csharpier.git">csharpier</a>，用于格式化 .NET 项目。其他语言的配置请自行摸索</p>
+<h2 id="用-csharpier-格式化-net-项目">用 CSharpier 格式化 .NET 项目</h2>
+<ol>
+<li>
+<p>打开 Azure DevOps Pipelines (之后统称 pipelines) 的配置文件 <code>azure-pipelines.yml</code> 编辑界面，右边选择 “.Net Core”</p>
+</li>
+<li>
+<p>安装 csharpier<br>
+<img src="https://www.kamasylvia.com/post-images/1634093592253.jpg" alt="" loading="lazy"><br>
+这里左边红框内是右边填写完后点击 Add 生成的配置代码。</p>
+</li>
+<li>
+<p>格式化指令<br>
+<img src="https://www.kamasylvia.com/post-images/1634094110201.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>将格式化后的代码推送回远程仓库。<br>
+<img src="https://www.kamasylvia.com/post-images/1634185616149.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>完整配置<br>
+<code>azure-pipelines.yml</code>:</p>
+</li>
+</ol>
+<pre><code class="language-yml">trigger:
+  batch: true
+  branches:
+    include:
+      - dev
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+
+stages:
+  - stage: Source
+    displayName: Source code management
+    jobs:
+    - job: Format
+      displayName: Format source code
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+        # Allow scripts to access the system token
+        - checkout: self
+          persistCredentials: true
+                
+        # Install CSharpier
+        - task: DotNetCoreCLI@2
+          inputs:
+            command: 'custom'
+            custom: 'tool'
+            arguments: 'install -g csharpier'
+
+        # Run CSarpier to format the source code
+        - task: DotNetCoreCLI@2
+          inputs:
+            command: 'custom'
+            custom: 'csharpier'
+            arguments: '.'
+        
+        # Before git commands, be sure your account's default identity is set
+        - task: CmdLine@2
+          continueOnError: true
+          inputs:
+            script: |
+                git config --global user.email &quot;you@example.com&quot;
+                git config --global user.name &quot;Your Name&quot;
+                
+        # Push formatted code back to remote repository
+        - task: CmdLine@2
+        # Our pipeline will stop if the code is already formatted, 
+        # because &quot;git commit&quot; throws an error if there is no change in the repository.
+        # Therefore, &quot;continueOnError&quot; has to be true to continue running the pipeline.
+          continueOnError: true
+          inputs:
+            script: |
+              git checkout $(Build.SourceBranchName)
+              git add -A
+              git commit --allow-empty -m &quot;Format source code with CSharpier [skip ci]&quot;
+              git push
+</code></pre>
+<p><code>Build.SourceBranchName</code> 是预定义变量，表示触发 CI 的分支名。<br>
+<img src="https://www.kamasylvia.com/post-images/1634102079749.jpg" alt="" loading="lazy"></p>
+<h2 id="完整代码">完整代码</h2>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&amp;tabs=yaml">Predefined variables - Azure Pipelines | Microsoft Docs</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands?view=azure-devops&amp;tabs=yaml">Run Git commands in a script - Azure Pipelines | Microsoft Docs</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/azure-repos-git?view=azure-devops&amp;tabs=yaml">Build Azure Repos Git repositories - Azure Pipelines | Microsoft Docs</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[DevOps] - 从 GitHub 自动构建镜像到 DockerHub ]]></title>
+        <id>https://www.kamasylvia.com/post/devops-automated-build-from-github-to-dockerhub/</id>
+        <link href="https://www.kamasylvia.com/post/devops-automated-build-from-github-to-dockerhub/">
+        </link>
+        <updated>2021-10-02T06:26:12.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前文">前文</h1>
+<p>DockerHub 的自动构建（Automated Builds）功能自 2021 年 6 月 18 日之后，仅限付费用户使用。因此我们需要寻找替代品去完成从 GitHub 仓库自动构建镜像并推送到 DockerHub 的功能。网上比较流行的方式是用 Github Actions，但关于使用 docker-compose 编排但项目进行批量构建推送的方案稀缺（我没找到）。此篇记录下使用 Azure DevOps 来实现自动构建的方案。</p>
+<h1 id="正文">正文</h1>
+<p>先参考这篇教程 <a href="https://mp.weixin.qq.com/s/4UFJ4-nS-AV1VvWs8OuPSQ">【Azure + Core】实现CI/CD（一）构建镜像并推送仓库</a> 准备账号和连接服务。在第三步的新建 Pipeline 中，因为我们用的是 docker-compose 而不是 docker ，在配置 YAML 文件时有些不同。</p>
+<ol>
+<li>
+<p>在进入 YAML 编辑界面后，删除 docker 的配置，然后点击右上角的 &quot;Show assistant&quot;。<br>
+<img src="https://www.kamasylvia.com/post-images/1633161074911.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>搜索框输入 &quot;docker&quot;，选择 &quot;Docker Compose&quot;<br>
+<img src="https://www.kamasylvia.com/post-images/1633161136495.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>然后参照官方文档 <a href="https://docs.microsoft.com/zh-cn/azure/devops/pipelines/tasks/build/docker-compose?view=azure-devops#combine-configuration">Docker Compose任务</a> 进行先构建后推送的配置。</p>
+<ul>
+<li>Build service images:
+<ol>
+<li>Container Registry Type: <strong>Container Registry</strong></li>
+<li>Docker Registry Service Connection: The service connection we created.</li>
+<li>Docker Compose File: <code>**/docker-compose.yml</code></li>
+<li>Additional Docker Compose Files: <code>docker-compose.override.yml</code></li>
+<li>Environment Variables: blank</li>
+<li>Project Name: default</li>
+<li>Qualify Image Names: true</li>
+<li>Action: <strong>Build service images</strong></li>
+<li>Include Source Tags: false</li>
+<li>Include Latest Tag: true</li>
+<li>Arguments: blank</li>
+<li>Advanced Options:
+<ol>
+<li>Docker Host Service Connection: blank</li>
+<li>No-op if no Docker Compose File: true</li>
+<li>Require Additional Docker Compose Files: false</li>
+<li>Working Directory: default</li>
+<li>Docker Compose executable Path: blank<br>
+<img src="https://www.kamasylvia.com/post-images/1633162241268.jpg" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<figure data-type="image" tabindex="1"><img src="https://www.kamasylvia.com/post-images/1633161503613.jpg" alt="" loading="lazy"></figure>
+<ol>
+<li>重复上一步，Action 选择 <code>Push service images</code> 进行推送配置，或直接复制粘贴之前生成的 YAML 配置代码，并删掉 Addtitional Docker Compose Files。注意：构建和推送配置唯一的不同就是 Additional Docker Compose Files。
+<ul>
+<li>Push service images
+<ol>
+<li>Container Registry Type: <strong>Container Registry</strong></li>
+<li>Docker Registry Service Connection: The service connection we created.</li>
+<li>Docker Compose File: <code>**/docker-compose.yml</code></li>
+<li>Additional Docker Compose Files: blank</li>
+<li>Environment Variables: blank</li>
+<li>Project Name: default</li>
+<li>Qualify Image Names: true</li>
+<li>Action: <strong>Build service images</strong></li>
+<li>Include Source Tags: false</li>
+<li>Include Latest Tag: true</li>
+<li>Arguments: blank</li>
+<li>Advanced Options:
+<ol>
+<li>Docker Host Service Connection: blank</li>
+<li>No-op if no Docker Compose File: true</li>
+<li>Require Additional Docker Compose Files: false</li>
+<li>Working Directory: default</li>
+<li>Docker Compose executable Path: blank</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://www.kamasylvia.com/post-images/1633161692815.jpg" alt="" loading="lazy"></figure>
+<ol start="5">
+<li>完整 YAML 配置代码。如果 Azure DevOps 没有对这块进行更新，其实可以直接复制粘贴这段而不用去 &quot;Show assisstant&quot; 里繁琐的配置。</li>
+</ol>
+<pre><code class="language-yaml"># Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- dev
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - task: DockerCompose@0
+        inputs:
+          containerregistrytype: 'Container Registry'
+          dockerRegistryEndpoint: 'DockerHub'   # 这里是我们创建的 DockerHub Service Connection 名称
+          dockerComposeFile: '**/docker-compose.yml'
+          additionalDockerComposeFiles: 'docker-compose.override.yml'
+          action: 'Build services'
+          includeLatestTag: true
+          nopIfNoDockerComposeFile: true
+      - task: DockerCompose@0
+        inputs:
+          containerregistrytype: 'Container Registry'
+          dockerRegistryEndpoint: 'DockerHub'   # 这里是我们创建的 DockerHub Service Connection 名称
+          dockerComposeFile: '**/docker-compose.yml'
+          additionalDockerComposeFiles: 'docker-compose.override.yml'
+          action: 'Push services'
+          includeLatestTag: true
+          nopIfNoDockerComposeFile: true
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[六孔膜笛] - 每日训练（萌新篇）]]></title>
+        <id>https://www.kamasylvia.com/post/flute-daily-practice/</id>
+        <link href="https://www.kamasylvia.com/post/flute-daily-practice/">
+        </link>
+        <updated>2021-09-14T00:43:59.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>参考的是画帛乐团张玉坤小姐姐的 <a href="https://www.bilibili.com/video/BV19E41157XX/?spm_id_from=333.788.recommend_more_video.0">零基础学会竹笛 看这个视频就够（第三集）</a> 系列</p>
+<h1 id="正文">正文</h1>
+<h2 id="长音练习">长音练习</h2>
+<div class="tvcontainer">
+<iframe src="//player.bilibili.com/player.html?aid=94333329&bvid=BV1mE411p7WG&cid=161039070&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="tv"> </iframe>
+</div>
+<h3 id="要求">要求</h3>
+<ul>
+<li>丹田运气</li>
+<li>用最大的力气吹，吹最响</li>
+<li>能吹多长吹多长，吹平稳</li>
+</ul>
+<h3 id="练习音阶">练习音阶</h3>
+<ul>
+<li>筒音作5（sol）的16音。
+<ul>
+<li>（低音区sol la si；中音区do re mi fa sol la si；高音区do re mi fa sol la.）</li>
+</ul>
+</li>
+<li>上行16音➕下行16音=32个音32口气。每一口气都按照3个要求去练习。</li>
+</ul>
+<h2 id="吐音练习">吐音练习</h2>
+<div class="tvcontainer">
+<iframe src="//player.bilibili.com/player.html?aid=95937978&bvid=BV19E41157XX&cid=163770542&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="tv"> </iframe>
+</div>
+<h3 id="要求-2">要求</h3>
+<ul>
+<li>均匀</li>
+<li>清楚</li>
+<li>颗粒性强</li>
+<li>初阶段慢练</li>
+</ul>
+<h3 id="练习音阶-2">练习音阶</h3>
+<ul>
+<li>筒音作5（sol）的16音。
+<ul>
+<li>（低音区sol la si；中音区do re mi fa sol la si；高音区do re mi fa sol la.）</li>
+</ul>
+</li>
+<li>每个音吹完单吐8组和双吐8组后再换音。</li>
+<li>上行16音➕下行16音=32个音。每个音都按照4个要求去练。</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[C#] - Async/Await inside Linq]]></title>
+        <id>https://www.kamasylvia.com/post/c-asyncawait-inside-linq/</id>
+        <link href="https://www.kamasylvia.com/post/c-asyncawait-inside-linq/">
+        </link>
+        <updated>2021-09-13T07:28:09.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>在 Linq 方法内使用 async/await 会报错的 <a href="https://stackoverflow.com/questions/65592364/async-await-inside-linq-where-clause-not-working">async/await inside LINQ where clause not working</a></p>
+<pre><code class="language-c#">var result = await list.Select(async item =&gt; await FooAsync(item));
+</code></pre>
+<h1 id="正文">正文</h1>
+<p>首先要 Nuget 引入 <code>System.Linq.Async.Queryable</code> 包。</p>
+<pre><code class="language-c#">var result = await list.ToAsyncEnumerable().
+    SelectAwait(async item =&gt; await FooAsync(item)).
+    ToListAsync();
+</code></pre>
+<h2 id="注意">注意</h2>
+<ul>
+<li>引入 <code>System.Linq.Async</code> 后会导致某些原来的 Linq 语法报错，这时候加上 <code>ToAsyncEnumerable()</code> 或 <code>ToAsyncQueryable()</code> 即可。</li>
+<li>只对 C# 8.0 以上版本有效。</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[Dapr] - VSCode 开发环境搭建]]></title>
+        <id>https://www.kamasylvia.com/post/dapr-vscode-environment/</id>
+        <link href="https://www.kamasylvia.com/post/dapr-vscode-environment/">
+        </link>
+        <updated>2021-09-08T08:10:09.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>本文转载自 <a href="https://mp.weixin.qq.com/s?__biz=MzAwNDM5ODM3Mg==&amp;mid=2657496157&amp;idx=1&amp;sn=9198f8c40bf57b6608b5811e0a506a18&amp;chksm=80be0016b7c9890017041a747442006a67121b20207b642740941f34d398061c02d3a77bacc6&amp;scene=21#wechat_redirect">Dapr微服务应用开发系列1：环境配置</a></p>
+<h1 id="正文">正文</h1>
+<p>如果不想在本机安装 Dapr 的 CLI 和 Runtime，还可以利用 Visual Studio Code Remote - Containers 的强大功能来实现开发环境的容器化。</p>
+<p>Dapr为各种支持的开发语言默认提供了开发容器，方便你把任何项目转换为Dapr应用。</p>
+<p>大致步骤如下：</p>
+<ol>
+<li>创建项目，（可选）引用对应语言的Dapr SDK</li>
+<li>在VS Code中打开项目的工作区（Workspace）</li>
+<li>在命令面板中输入 <code>Remote-Containers: Add Development Container Configuration Files...</code></li>
+<li>在选择开发容器的时候，输入<code>dapr</code> 来进行查找，选择对应的语言版本，比如 <code>Dapr with C#</code></li>
+<li>VS Code 会自动给你的项目添加相关的 Dockerfile 和其他配置文件（比如 <code>.devcontainer</code> 文件夹）</li>
+<li>VS Code 检测到 <code>.devcontainer</code> 文件夹后，会提示你是否要使用容器模式打开</li>
+<li>通过容器模式打开后，会自动构建项目工作区的容器镜像，同时还会额外启动用于容器开发的 placement 和 zipkin 容器实例（名称为：<code>dapr_placement_dapr-dev-container</code> 和 <code>dapr_zipkin_dapr-dev-container</code>）</li>
+</ol>
+<p>开发容器如下图所示：<br>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/c2D45PeA5ibVnAZITaX7PpCpXa7zo8n506fT0lzfY6RQm4dZwzV8cPt9CSJ1rMJTCiazcK49z5FsUYkuPspKr5Yg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="image" loading="lazy"><br>
+使用这种开发容器带来的好处就是：整个 Dapr 开发的依赖环境可以通过 Dockerfile 来自动配置完成。</p>
+]]></content>
+    </entry>
+</feed>
