@@ -1,0 +1,947 @@
+<!DOCTYPE html><html lang="[&quot;en&quot;,&quot;zh-CN&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>[Hexo] - Hexo Quick Guide | ༄༊࿆咸鱼の家ོྂཾ࿆࿐</title><meta name="author" content="Laniakea Kamasylvia"><meta name="copyright" content="Laniakea Kamasylvia"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="What is Hexo?   Documentation | Hexo   Hexo is a fast, simple and powerful blog framework. You write posts in Markdown (or other markup languages) and Hexo generates static files with a beautiful them">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Hexo] - Hexo Quick Guide">
+<meta property="og:url" content="https://blog.kamasylvia.com/p/43fa3e56/index.html">
+<meta property="og:site_name" content="༄༊࿆咸鱼の家ོྂཾ࿆࿐">
+<meta property="og:description" content="What is Hexo?   Documentation | Hexo   Hexo is a fast, simple and powerful blog framework. You write posts in Markdown (or other markup languages) and Hexo generates static files with a beautiful them">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/eZZrra.jpg">
+<meta property="article:published_time" content="2022-10-26T07:27:01.000Z">
+<meta property="article:modified_time" content="2023-10-30T00:50:05.717Z">
+<meta property="article:author" content="Laniakea Kamasylvia">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/eZZrra.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.kamasylvia.com/p/43fa3e56/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3769370466946602',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '[Hexo] - Hexo Quick Guide',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-30 08:50:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css?v1"><link rel="stylesheet" href="/assets/css/background.css?v1"><link rel="stylesheet" href="/assets/css/corner-indicator.css?v1"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="༄༊࿆咸鱼の家ོྂཾ࿆࿐" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/Mu2eWI.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">195</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">76</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">63</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="༄༊࿆咸鱼の家ོྂཾ࿆࿐"><span class="site-name">༄༊࿆咸鱼の家ོྂཾ࿆࿐</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">[Hexo] - Hexo Quick Guide</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-10-26T07:27:01.000Z" title="Created 2022-10-26 15:27:01">2022-10-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-10-30T00:50:05.717Z" title="Updated 2023-10-30 08:50:05">2023-10-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/">Archives</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/Hexo/">Hexo</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">2.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>14min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="[Hexo] - Hexo Quick Guide"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="What-is-Hexo">What is Hexo?</h1>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/">Documentation | Hexo</a></li>
+</ul>
+</blockquote>
+<p>Hexo is a fast, simple and powerful blog framework. You write posts in Markdown (or other markup languages) and Hexo generates static files with a beautiful theme in seconds.</p>
+<h1 id="Installation">Installation</h1>
+<h2 id="Prerequisites">Prerequisites</h2>
+<ul>
+<li>Git</li>
+<li>Node.js</li>
+<li>NPM or YARN</li>
+</ul>
+<h2 id="Mac">Mac</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install hexo</span><br></pre></td></tr></table></figure>
+<h2 id="Majaro">Majaro</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay hexo</span><br></pre></td></tr></table></figure>
+<h2 id="Windows">Windows</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn global add hexo-cli</span><br></pre></td></tr></table></figure>
+<h1 id="Initialization">Initialization</h1>
+<p>Once Hexo is installed, run the following commands to initialize Hexo in the target <code>&lt;folder&gt;</code>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">yarn</span><br></pre></td></tr></table></figure>
+<h1 id="Plugins">Plugins</h1>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/amehime/hexo-renderer-multi-markdown-it">amehime/hexo-renderer-multi-markdown-it</a></li>
+<li><a target="_blank" rel="noopener" href="https://shoka.lostyu.me/computer-science/note/theme-shoka-doc/dependents/">multi-markdown-it 安装与配置</a></li>
+</ul>
+</blockquote>
+<style>.admonition {
+  margin: 1.5625em 0;
+  padding: .6rem;
+  overflow: hidden;
+  font-size: 1.00rem;
+  page-break-inside: avoid;
+  border-left: .3rem solid #42b983;
+  border-radius: .3rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
+  background-color: #fafafa;
+}
+
+p.admonition-title {
+  position: relative;
+  margin: -.6rem -.6rem .8em -.6rem !important;
+  padding: .4rem .6rem .4rem 2.5rem;
+  font-weight: 700;
+  background-color:rgba(66, 185, 131, .1);
+}
+
+.admonition-title::before {
+  position: absolute;
+  top: .9rem;
+  left: 1rem;
+  width: 12px;
+  height: 12px;
+  background-color: #42b983;
+  border-radius: 50%;
+  content: ' ';
+}
+
+.info>.admonition-title, .todo>.admonition-title {
+  background-color: rgba(0,184,212,.1);
+}
+
+.warning>.admonition-title, .attention>.admonition-title, .caution>.admonition-title {
+  background-color: rgba(255,145,0,.1);
+}
+
+.failure>.admonition-title, .missing>.admonition-title, .fail>.admonition-title, .error>.admonition-title {
+  background-color: rgba(255,82,82,.1);
+}
+
+.admonition.info, .admonition.todo {
+  border-color: #00b8d4;
+}
+
+.admonition.warning, .admonition.attention, .admonition.caution {
+  border-color: #ff9100;
+}
+
+.admonition.failure, .admonition.missing, .admonition.fail, .admonition.error {
+  border-color: #ff5252;
+}
+
+.info>.admonition-title::before, .todo>.admonition-title::before {
+  background-color: #00b8d4;
+  border-radius: 50%;
+}
+
+.warning>.admonition-title::before, .attention>.admonition-title::before, .caution>.admonition-title::before {
+  background-color: #ff9100;
+  border-radius: 50%;
+}
+
+.failure>.admonition-title::before,.missing>.admonition-title::before,.fail>.admonition-title::before,.error>.admonition-title::before{
+  background-color: #ff5252;;
+  border-radius: 50%;
+}
+
+.admonition>:last-child {
+  margin-bottom: 0 !important;
+}
+</style>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>Make sure you're inside the main hexo directory before starting this guide.</p>
+</div>
+<h2 id="Theme-Shoka-required-plugins">Theme Shoka required plugins</h2>
+<h3 id="Install-hexo-renderer-multi-markdown-it">Install <code>hexo-renderer-multi-markdown-it</code></h3>
+<p>A default Hexo installation will include a markdown renderer plugin which uses marked, so you will have to remove it if you want to use this renderer.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn remove hexo-renderer-marked</span><br></pre></td></tr></table></figure>
+<p>If you have already removed the default renderer, and others you might of added, you can now safely install <code>hexo-renderer-multi-markdown-it</code>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-renderer-multi-markdown-it</span><br></pre></td></tr></table></figure>
+<p>if an error is reported as</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR: Failed to download Chromium r515411! Set <span class="string">&quot;PUPPETEER_SKIP_CHROMIUM_DOWNLOAD&quot;</span> <span class="built_in">env</span> variable to skip download.</span><br></pre></td></tr></table></figure>
+<p>please try again with the following command</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-renderer-multi-markdown-it --ignore-scripts</span><br></pre></td></tr></table></figure>
+<h4 id="Configuration">Configuration</h4>
+<p>Configuring the renderer is a fairly simple task because all the settings are in the main hexo <code>_config.yml</code> file.</p>
+<p>You just need to open it in your favourite text editor and write down your configuration.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># opitions for renderer</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">plugin:</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">markdown-it-toc-and-anchor</span></span><br><span class="line">        <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">options:</span></span><br><span class="line">          <span class="attr">tocClassName:</span> <span class="string">&#x27;toc&#x27;</span></span><br><span class="line">          <span class="attr">anchorClassName:</span> <span class="string">&#x27;anchor&#x27;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">plugin:</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">markdown-it-multimd-table</span></span><br><span class="line">        <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">options:</span></span><br><span class="line">          <span class="attr">multiline:</span> <span class="literal">true</span></span><br><span class="line">          <span class="attr">rowspan:</span> <span class="literal">true</span></span><br><span class="line">          <span class="attr">headerless:</span> <span class="literal">true</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">plugin:</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">./markdown-it-furigana</span></span><br><span class="line">        <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">options:</span></span><br><span class="line">          <span class="attr">fallbackParens:</span> <span class="string">&quot;()&quot;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">plugin:</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">./markdown-it-spoiler</span></span><br><span class="line">        <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">options:</span></span><br><span class="line">          <span class="attr">title:</span> <span class="string">&quot;你知道得太多了&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># options for minify</span></span><br><span class="line"><span class="attr">minify:</span></span><br><span class="line">  <span class="attr">html:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;**/json.ejs&#x27;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;**/atom.ejs&#x27;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;**/rss.ejs&#x27;</span></span><br><span class="line">  <span class="attr">css:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;**/*.min.css&#x27;</span></span><br><span class="line">  <span class="attr">js:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">mangle:</span></span><br><span class="line">      <span class="attr">toplevel:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">output:</span></span><br><span class="line">    <span class="attr">compress:</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;**/*.min.js&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Install-hexo-autoprefixer">Install <code>hexo-autoprefixer</code></h3>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-autoprefixer --save</span><br></pre></td></tr></table></figure>
+<h4 id="Configuration-2">Configuration</h4>
+<p>Edit <code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">autoprefixer:</span></span><br><span class="line">  <span class="attr">exclude:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&#x27;*.min.css&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Install-hexo-algoliasearch">Install <code>hexo-algoliasearch</code></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title: Danger</span><br><span class="line">If you leave algolia required settings blank, your website will be stuck on loading. You can skip this step if search reature is not necessary for you.</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-algoliasearch --save</span><br></pre></td></tr></table></figure>
+<h4 id="Configuration-3">Configuration</h4>
+<p>Edit <code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="comment">#Your appId</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="comment">#Your apiKey</span></span><br><span class="line">  <span class="attr">adminApiKey:</span> <span class="comment">#Your adminApiKey</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="comment">#&quot;shoka&quot;</span></span><br><span class="line">  <span class="attr">fields:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">title</span> <span class="comment">#必须配置</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">path</span> <span class="comment">#必须配置</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">categories</span> <span class="comment">#推荐配置</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">content:strip:truncate,0,2000</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">gallery</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">photos</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags</span></span><br></pre></td></tr></table></figure>
+<h3 id="Install-hexo-symbols-count-time">Install <code>hexo-symbols-count-time</code></h3>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
+<h3 id="Install-hexo-feed">Install <code>hexo-feed</code></h3>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-feed --save-dev</span><br></pre></td></tr></table></figure>
+<h4 id="Configuration-4">Configuration</h4>
+<p>Edit <code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feed:</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">20</span></span><br><span class="line">    <span class="attr">order_by:</span> <span class="string">&quot;-date&quot;</span></span><br><span class="line">    <span class="attr">tag_dir:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">category_dir:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">rss:</span></span><br><span class="line">        <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">template:</span> <span class="string">&quot;themes/shoka/layout/_alternate/rss.ejs&quot;</span></span><br><span class="line">        <span class="attr">output:</span> <span class="string">&quot;rss.xml&quot;</span></span><br><span class="line">    <span class="attr">atom:</span></span><br><span class="line">        <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">template:</span> <span class="string">&quot;themes/shoka/layout/_alternate/atom.ejs&quot;</span></span><br><span class="line">        <span class="attr">output:</span> <span class="string">&quot;atom.xml&quot;</span></span><br><span class="line">    <span class="attr">jsonFeed:</span></span><br><span class="line">        <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">template:</span> <span class="string">&quot;themes/shoka/layout/_alternate/json.ejs&quot;</span></span><br><span class="line">        <span class="attr">output:</span> <span class="string">&quot;feed.json&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Other-required-pluins">Other required pluins</h2>
+<h3 id="Install-hexo-hide-posts">Install <code>hexo-hide-posts</code></h3>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hujiyi.github.io/2022/08/31/hexo-hide-posts/">在 Hexo 中隐藏文章</a></li>
+</ul>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-hide-posts</span><br></pre></td></tr></table></figure>
+<h4 id="Configuration-5">Configuration</h4>
+<ol>
+<li>Edit <code>_config.yml</code></li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo-hide-posts</span></span><br><span class="line"><span class="attr">hide_posts:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Change the filter name to fit your need</span></span><br><span class="line">  <span class="attr">filter:</span> <span class="string">hidden</span></span><br><span class="line">  <span class="comment"># Generators which you want to expose all posts (include hidden ones) to.</span></span><br><span class="line">  <span class="comment"># Common generators: index, tag, category, archive, sitemap, feed, etc.</span></span><br><span class="line">  <span class="attr">public_generators:</span> []</span><br><span class="line">  <span class="comment"># Add &quot;noindex&quot; meta tag to prevent hidden posts from being indexed by search engines</span></span><br><span class="line">  <span class="attr">noindex:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Edit Front-matter</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">hidden:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="Install-hexo-abbrlink">Install <code>hexo-abbrlink</code></h3>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-abbrlink">hexo-abbrlink</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/134492757">Hexo 生成永久文章链接 - 知乎</a></li>
+</ul>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h4 id="Configuration-6">Configuration</h4>
+<p>Edit <code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>      <span class="comment">#support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>        <span class="comment">#support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<h1 id="Theme-Shoka">Theme - Shoka</h1>
+<style>.admonition {
+  margin: 1.5625em 0;
+  padding: .6rem;
+  overflow: hidden;
+  font-size: 1.00rem;
+  page-break-inside: avoid;
+  border-left: .3rem solid #42b983;
+  border-radius: .3rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
+  background-color: #fafafa;
+}
+
+p.admonition-title {
+  position: relative;
+  margin: -.6rem -.6rem .8em -.6rem !important;
+  padding: .4rem .6rem .4rem 2.5rem;
+  font-weight: 700;
+  background-color:rgba(66, 185, 131, .1);
+}
+
+.admonition-title::before {
+  position: absolute;
+  top: .9rem;
+  left: 1rem;
+  width: 12px;
+  height: 12px;
+  background-color: #42b983;
+  border-radius: 50%;
+  content: ' ';
+}
+
+.info>.admonition-title, .todo>.admonition-title {
+  background-color: rgba(0,184,212,.1);
+}
+
+.warning>.admonition-title, .attention>.admonition-title, .caution>.admonition-title {
+  background-color: rgba(255,145,0,.1);
+}
+
+.failure>.admonition-title, .missing>.admonition-title, .fail>.admonition-title, .error>.admonition-title {
+  background-color: rgba(255,82,82,.1);
+}
+
+.admonition.info, .admonition.todo {
+  border-color: #00b8d4;
+}
+
+.admonition.warning, .admonition.attention, .admonition.caution {
+  border-color: #ff9100;
+}
+
+.admonition.failure, .admonition.missing, .admonition.fail, .admonition.error {
+  border-color: #ff5252;
+}
+
+.info>.admonition-title::before, .todo>.admonition-title::before {
+  background-color: #00b8d4;
+  border-radius: 50%;
+}
+
+.warning>.admonition-title::before, .attention>.admonition-title::before, .caution>.admonition-title::before {
+  background-color: #ff9100;
+  border-radius: 50%;
+}
+
+.failure>.admonition-title::before,.missing>.admonition-title::before,.fail>.admonition-title::before,.error>.admonition-title::before{
+  background-color: #ff5252;;
+  border-radius: 50%;
+}
+
+.admonition>:last-child {
+  margin-bottom: 0 !important;
+}
+</style>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>Make sure you're inside the main hexo directory before starting this guide.</p>
+</div>
+<h2 id="Quick-Quick-install">Quick ## Quick install</h2>
+<p>install</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd your-blog</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/amehime/hexo-theme-shoka.git ./themes/shoka</span><br></pre></td></tr></table></figure>
+<h2 id="Apply-theme">Apply theme</h2>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">shoka</span></span><br></pre></td></tr></table></figure>
+<h2 id="Configuration-7">Configuration</h2>
+<ol>
+<li>Create <code>&lt;root&gt;/_config.shoka.yml</code></li>
+<li>Edit <code>_config.shoka.yml</code> according to <a target="_blank" rel="noopener" href="https://shoka.lostyu.me/computer-science/note/theme-shoka-doc/config/">Step.2 基本配置</a></li>
+</ol>
+<h1 id="Deployment-Github-Pages">Deployment - Github Pages</h1>
+<style>.admonition {
+  margin: 1.5625em 0;
+  padding: .6rem;
+  overflow: hidden;
+  font-size: 1.00rem;
+  page-break-inside: avoid;
+  border-left: .3rem solid #42b983;
+  border-radius: .3rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
+  background-color: #fafafa;
+}
+
+p.admonition-title {
+  position: relative;
+  margin: -.6rem -.6rem .8em -.6rem !important;
+  padding: .4rem .6rem .4rem 2.5rem;
+  font-weight: 700;
+  background-color:rgba(66, 185, 131, .1);
+}
+
+.admonition-title::before {
+  position: absolute;
+  top: .9rem;
+  left: 1rem;
+  width: 12px;
+  height: 12px;
+  background-color: #42b983;
+  border-radius: 50%;
+  content: ' ';
+}
+
+.info>.admonition-title, .todo>.admonition-title {
+  background-color: rgba(0,184,212,.1);
+}
+
+.warning>.admonition-title, .attention>.admonition-title, .caution>.admonition-title {
+  background-color: rgba(255,145,0,.1);
+}
+
+.failure>.admonition-title, .missing>.admonition-title, .fail>.admonition-title, .error>.admonition-title {
+  background-color: rgba(255,82,82,.1);
+}
+
+.admonition.info, .admonition.todo {
+  border-color: #00b8d4;
+}
+
+.admonition.warning, .admonition.attention, .admonition.caution {
+  border-color: #ff9100;
+}
+
+.admonition.failure, .admonition.missing, .admonition.fail, .admonition.error {
+  border-color: #ff5252;
+}
+
+.info>.admonition-title::before, .todo>.admonition-title::before {
+  background-color: #00b8d4;
+  border-radius: 50%;
+}
+
+.warning>.admonition-title::before, .attention>.admonition-title::before, .caution>.admonition-title::before {
+  background-color: #ff9100;
+  border-radius: 50%;
+}
+
+.failure>.admonition-title::before,.missing>.admonition-title::before,.fail>.admonition-title::before,.error>.admonition-title::before{
+  background-color: #ff5252;;
+  border-radius: 50%;
+}
+
+.admonition>:last-child {
+  margin-bottom: 0 !important;
+}
+</style>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>Make sure you're inside the main hexo directory before starting this guide.</p>
+</div>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a541a11fe9d8">利用(微软)Azure DevOps 实现 Hexo 自动部署</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/552639819">2022【保姆级教程】含泪搭建 hexo 博客</a></li>
+</ul>
+</blockquote>
+<h2 id="Install-hexo-deployer-git">Install hexo-deployer-git</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="Configuration-8">Configuration</h3>
+<p>Edit <code>_config.yml</code> (with example values shown below as comments):</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span> <span class="comment"># https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io</span></span><br><span class="line">  <span class="attr">branch:</span> [<span class="string">branch</span>]</span><br><span class="line">  <span class="attr">message:</span> [<span class="string">message</span>]</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Defaut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>repo</code></td>
+<td>URL of the target repository</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p><code>branch</code></p>
+</td>
+<td>
+<p>Branch name.</p>
+</td>
+<td>
+<ul>
+<li><code>gh-pages</code> (Github)</li>
+<li><code>coding-pages</code> (<a target="_blank" rel="noopener" href="http://Coding.net">Coding.net</a>)</li>
+<li><code>master</code> (others)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>Customize commit message.</td>
+<td><code>Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;</code></td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td>Optional token value to authenticate with the repo. Prefix with <code>$</code> to read token from environment variable</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<style>.admonition {
+  margin: 1.5625em 0;
+  padding: .6rem;
+  overflow: hidden;
+  font-size: 1.00rem;
+  page-break-inside: avoid;
+  border-left: .3rem solid #42b983;
+  border-radius: .3rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
+  background-color: #fafafa;
+}
+
+p.admonition-title {
+  position: relative;
+  margin: -.6rem -.6rem .8em -.6rem !important;
+  padding: .4rem .6rem .4rem 2.5rem;
+  font-weight: 700;
+  background-color:rgba(66, 185, 131, .1);
+}
+
+.admonition-title::before {
+  position: absolute;
+  top: .9rem;
+  left: 1rem;
+  width: 12px;
+  height: 12px;
+  background-color: #42b983;
+  border-radius: 50%;
+  content: ' ';
+}
+
+.info>.admonition-title, .todo>.admonition-title {
+  background-color: rgba(0,184,212,.1);
+}
+
+.warning>.admonition-title, .attention>.admonition-title, .caution>.admonition-title {
+  background-color: rgba(255,145,0,.1);
+}
+
+.failure>.admonition-title, .missing>.admonition-title, .fail>.admonition-title, .error>.admonition-title {
+  background-color: rgba(255,82,82,.1);
+}
+
+.admonition.info, .admonition.todo {
+  border-color: #00b8d4;
+}
+
+.admonition.warning, .admonition.attention, .admonition.caution {
+  border-color: #ff9100;
+}
+
+.admonition.failure, .admonition.missing, .admonition.fail, .admonition.error {
+  border-color: #ff5252;
+}
+
+.info>.admonition-title::before, .todo>.admonition-title::before {
+  background-color: #00b8d4;
+  border-radius: 50%;
+}
+
+.warning>.admonition-title::before, .attention>.admonition-title::before, .caution>.admonition-title::before {
+  background-color: #ff9100;
+  border-radius: 50%;
+}
+
+.failure>.admonition-title::before,.missing>.admonition-title::before,.fail>.admonition-title::before,.error>.admonition-title::before{
+  background-color: #ff5252;;
+  border-radius: 50%;
+}
+
+.admonition>:last-child {
+  margin-bottom: 0 !important;
+}
+</style>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>While this plugin can parse authentication token from the config, only use this method if you are sure the config will not be committed, including to a private repo. A more secure approach is to add it to the CI as an environment variable, then simply add the name of the environment variable to this plugin's config (e.g. <code>$GITHUB_TOKEN</code>).</p>
+</div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title: Danger</span><br><span class="line">Type PAT in `token` does not work now!</span><br></pre></td></tr></table></figure>
+<h2 id="Import-public-key-and-private-key">Import public key and private key</h2>
+<style>.admonition {
+  margin: 1.5625em 0;
+  padding: .6rem;
+  overflow: hidden;
+  font-size: 1.00rem;
+  page-break-inside: avoid;
+  border-left: .3rem solid #42b983;
+  border-radius: .3rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
+  background-color: #fafafa;
+}
+
+p.admonition-title {
+  position: relative;
+  margin: -.6rem -.6rem .8em -.6rem !important;
+  padding: .4rem .6rem .4rem 2.5rem;
+  font-weight: 700;
+  background-color:rgba(66, 185, 131, .1);
+}
+
+.admonition-title::before {
+  position: absolute;
+  top: .9rem;
+  left: 1rem;
+  width: 12px;
+  height: 12px;
+  background-color: #42b983;
+  border-radius: 50%;
+  content: ' ';
+}
+
+.info>.admonition-title, .todo>.admonition-title {
+  background-color: rgba(0,184,212,.1);
+}
+
+.warning>.admonition-title, .attention>.admonition-title, .caution>.admonition-title {
+  background-color: rgba(255,145,0,.1);
+}
+
+.failure>.admonition-title, .missing>.admonition-title, .fail>.admonition-title, .error>.admonition-title {
+  background-color: rgba(255,82,82,.1);
+}
+
+.admonition.info, .admonition.todo {
+  border-color: #00b8d4;
+}
+
+.admonition.warning, .admonition.attention, .admonition.caution {
+  border-color: #ff9100;
+}
+
+.admonition.failure, .admonition.missing, .admonition.fail, .admonition.error {
+  border-color: #ff5252;
+}
+
+.info>.admonition-title::before, .todo>.admonition-title::before {
+  background-color: #00b8d4;
+  border-radius: 50%;
+}
+
+.warning>.admonition-title::before, .attention>.admonition-title::before, .caution>.admonition-title::before {
+  background-color: #ff9100;
+  border-radius: 50%;
+}
+
+.failure>.admonition-title::before,.missing>.admonition-title::before,.fail>.admonition-title::before,.error>.admonition-title::before{
+  background-color: #ff5252;;
+  border-radius: 50%;
+}
+
+.admonition>:last-child {
+  margin-bottom: 0 !important;
+}
+</style>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>Make sure your public/private keys are already generated before starting this guide.</p>
+</div>
+<p>Instead of PAT, <code>hexo-deployer-git</code> works greate with public/private keys.</p>
+<h3 id="Imort-public-key-to-Github">Imort public key to Github</h3>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic3.zhimg.com/v2-4277a32e6cb1ecb3011472ab9468d25a_r.jpg" alt="" loading="lazy"></p>
+<h3 id="Import-private-key-to-Azure-DevOps">Import private key to Azure DevOps</h3>
+<ol>
+<li>Create a repository on Github.</li>
+<li>Create a Azure DevOps Pipeline with CI variables.</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Starter pipeline</span></span><br><span class="line"><span class="comment"># Start with a minimal pipeline that you can customize to build and deploy your code.</span></span><br><span class="line"><span class="comment"># Add steps that build, run tests, deploy, and more:</span></span><br><span class="line"><span class="comment"># https://aka.ms/yaml</span></span><br><span class="line"></span><br><span class="line"><span class="attr">trigger:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"></span><br><span class="line"><span class="attr">pool:</span></span><br><span class="line">  <span class="attr">vmImage:</span> <span class="string">ubuntu-latest</span>	<span class="comment"># hexo-cli does not work on Windows.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">steps:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">script:</span> <span class="string">|</span></span><br><span class="line"><span class="string">    git config --global user.email &quot;$(EMAIL)&quot;</span></span><br><span class="line"><span class="string">    git config --global user.name &quot;$(USERNAME)&quot;</span></span><br><span class="line"><span class="string">    git clone https://github.com/amehime/hexo-theme-shoka.git ./themes/shoka</span></span><br><span class="line"><span class="string">    npm install -g hexo-cli</span></span><br><span class="line"><span class="string">    npm install hexo-deployer-git --save</span></span><br><span class="line"><span class="string"></span>  <span class="attr">displayName:</span> <span class="string">&#x27;Installing dependencies...&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># (Option) Sync Azure DevOps repo to Github Repo.</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">task:</span> <span class="string">mirror-git-repository-vsts-task@1</span></span><br><span class="line">  <span class="attr">inputs:</span></span><br><span class="line">    <span class="attr">sourceGitRepositoryUri:</span> <span class="string">&#x27;$(Build.Repository.Uri)&#x27;</span></span><br><span class="line">    <span class="attr">destinationGitRepositoryUri:</span> <span class="string">&#x27;$(HEXO_SOURCE_REPO)&#x27;</span></span><br><span class="line">    <span class="attr">destinationGitRepositoryPersonalAccessToken:</span> <span class="string">&#x27;$(PERSONAL_ACCESS_TOKEN)&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">task:</span> <span class="string">InstallSSHKey@0</span></span><br><span class="line">  <span class="attr">inputs:</span></span><br><span class="line">    <span class="attr">knownHostsEntry:</span> <span class="string">&#x27;github&#x27;</span></span><br><span class="line">    <span class="attr">sshKeySecureFile:</span> <span class="string">&#x27;Ed25519&#x27;</span>	<span class="comment"># Secure file name.</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">task:</span> <span class="string">Npm@1</span></span><br><span class="line">  <span class="attr">inputs:</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">&#x27;install&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">script:</span> <span class="string">|</span></span><br><span class="line"><span class="string">    ssh-keyscan github.com &gt; ~/.ssh/known_hosts</span></span><br><span class="line"><span class="string">    hexo clean</span></span><br><span class="line"><span class="string">    hexo d</span></span><br><span class="line"><span class="string"></span>  <span class="attr">displayName:</span> <span class="string">&#x27;Deploying...&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/MbZzo9.png" alt="" loading="lazy"></p>
+<ol start="3">
+<li>
+<p>Azure DevOps -&gt; Pipelines -&gt; Library -&gt; Add Secure file
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/1Cl3Hz.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>Click the secure file, then set pipeline permissions.
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/dk2MML.png" alt="" loading="lazy"></p>
+</li>
+</ol>
+<h1 id="Writing">Writing</h1>
+<h2 id="New-a-post">New a post</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">&quot;Title&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Enable-Katex-and-Mermaid">Enable Katex and Mermaid</h2>
+<p>Edit front-matter.</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">math: true</span><br><span class="line">mermaid: true</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://blog.kamasylvia.com">Laniakea Kamasylvia</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://blog.kamasylvia.com/p/43fa3e56/">https://blog.kamasylvia.com/p/43fa3e56/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a></div><div class="post_share"><div class="social-share" data-image="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/eZZrra.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/nlzvJy.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/nlzvJy.jpg" alt="WeChat"/></a><div class="post-qr-code-desc">WeChat</div></li><li class="reward-item"><a href="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/IEwsOf.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/IEwsOf.jpg" alt="Alipay"/></a><div class="post-qr-code-desc">Alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/p/4a17b156/" title="Hello World"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/OWO8QP.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Hello World</div></div></a></div><div class="next-post pull-right"><a href="/p/e3a0528/" title="[Hexo] - Plugin: hexo-auto-category"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/uhqY2j.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">[Hexo] - Plugin: hexo-auto-category</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/p/4a17b156/" title="Hello World"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/OWO8QP.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-26</div><div class="title">Hello World</div></div></a></div><div><a href="/p/140c6d4d/" title="[Hexo] - Live2D"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/FUyin7.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-09</div><div class="title">[Hexo] - Live2D</div></div></a></div><div><a href="/p/63dbba89/" title="[Hexo] - Sakura Rain"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/XsOl0K.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-03</div><div class="title">[Hexo] - Sakura Rain</div></div></a></div><div><a href="/p/e96a745a/" title="[Hexo] - Effortlessly Deploy Your Hexo Blog to Cloudflare Pages with Wrangler and CI&#x2F;CD"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/shNgbd.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-30</div><div class="title">[Hexo] - Effortlessly Deploy Your Hexo Blog to Cloudflare Pages with Wrangler and CI&#x2F;CD</div></div></a></div><div><a href="/p/e604fcf7/" title="[Hexo] - Plugin: hexo-admonition"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/XsOl0K.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-03</div><div class="title">[Hexo] - Plugin: hexo-admonition</div></div></a></div><div><a href="/p/e3a0528/" title="[Hexo] - Plugin: hexo-auto-category"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/uhqY2j.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-03</div><div class="title">[Hexo] - Plugin: hexo-auto-category</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#What-is-Hexo"><span class="toc-number">1.</span> <span class="toc-text">What is Hexo?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Installation"><span class="toc-number">2.</span> <span class="toc-text">Installation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Prerequisites"><span class="toc-number">2.1.</span> <span class="toc-text">Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac"><span class="toc-number">2.2.</span> <span class="toc-text">Mac</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Majaro"><span class="toc-number">2.3.</span> <span class="toc-text">Majaro</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows"><span class="toc-number">2.4.</span> <span class="toc-text">Windows</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Initialization"><span class="toc-number">3.</span> <span class="toc-text">Initialization</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Plugins"><span class="toc-number">4.</span> <span class="toc-text">Plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Theme-Shoka-required-plugins"><span class="toc-number">4.1.</span> <span class="toc-text">Theme Shoka required plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-hexo-renderer-multi-markdown-it"><span class="toc-number">4.1.1.</span> <span class="toc-text">Install hexo-renderer-multi-markdown-it</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Configuration"><span class="toc-number">4.1.1.1.</span> <span class="toc-text">Configuration</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-hexo-autoprefixer"><span class="toc-number">4.1.2.</span> <span class="toc-text">Install hexo-autoprefixer</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Configuration-2"><span class="toc-number">4.1.2.1.</span> <span class="toc-text">Configuration</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-hexo-algoliasearch"><span class="toc-number">4.1.3.</span> <span class="toc-text">Install hexo-algoliasearch</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Configuration-3"><span class="toc-number">4.1.3.1.</span> <span class="toc-text">Configuration</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-hexo-symbols-count-time"><span class="toc-number">4.1.4.</span> <span class="toc-text">Install hexo-symbols-count-time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-hexo-feed"><span class="toc-number">4.1.5.</span> <span class="toc-text">Install hexo-feed</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Configuration-4"><span class="toc-number">4.1.5.1.</span> <span class="toc-text">Configuration</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other-required-pluins"><span class="toc-number">4.2.</span> <span class="toc-text">Other required pluins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-hexo-hide-posts"><span class="toc-number">4.2.1.</span> <span class="toc-text">Install hexo-hide-posts</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Configuration-5"><span class="toc-number">4.2.1.1.</span> <span class="toc-text">Configuration</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-hexo-abbrlink"><span class="toc-number">4.2.2.</span> <span class="toc-text">Install hexo-abbrlink</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Configuration-6"><span class="toc-number">4.2.2.1.</span> <span class="toc-text">Configuration</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Theme-Shoka"><span class="toc-number">5.</span> <span class="toc-text">Theme - Shoka</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Quick-install"><span class="toc-number">5.1.</span> <span class="toc-text">Quick ## Quick install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Apply-theme"><span class="toc-number">5.2.</span> <span class="toc-text">Apply theme</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-7"><span class="toc-number">5.3.</span> <span class="toc-text">Configuration</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deployment-Github-Pages"><span class="toc-number">6.</span> <span class="toc-text">Deployment - Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-hexo-deployer-git"><span class="toc-number">6.1.</span> <span class="toc-text">Install hexo-deployer-git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Configuration-8"><span class="toc-number">6.1.1.</span> <span class="toc-text">Configuration</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Import-public-key-and-private-key"><span class="toc-number">6.2.</span> <span class="toc-text">Import public key and private key</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Imort-public-key-to-Github"><span class="toc-number">6.2.1.</span> <span class="toc-text">Imort public key to Github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Import-private-key-to-Azure-DevOps"><span class="toc-number">6.2.2.</span> <span class="toc-text">Import private key to Azure DevOps</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Writing"><span class="toc-number">7.</span> <span class="toc-text">Writing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#New-a-post"><span class="toc-number">7.1.</span> <span class="toc-text">New a post</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Enable-Katex-and-Mermaid"><span class="toc-number">7.2.</span> <span class="toc-text">Enable Katex and Mermaid</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Laniakea Kamasylvia</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addModeChange('mermaid', runMermaid)
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline.kamasylvia.com/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'object') initWaline()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css').then(() => {
+      getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script><script src="/assets/js/sakura.js?v1"></script><script src='https://unpkg.com/mermaid@{{ mermaid.version }}/dist/mermaid.min.js'></script><script>if (window.mermaid) {mermaid.initialize({{ JSON.stringify( mermaid.options) }});}</script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script>(() => {
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/f8ce9a66.js","daovoice")
+
+  const isChatBtn = true
+  const isChatHideShow = false
+
+  daovoice('init', {
+    app_id: 'f8ce9a66',},{
+    launcher: { 
+      disableLauncherIcon: isChatBtn
+    },
+  });
+  daovoice('update');
+
+  if (isChatBtn) {
+    window.chatBtnFn = () => {
+      const isShow = document.getElementById('daodream-messenger').classList.contains('daodream-messenger-active')
+      isShow ? daovoice('hide') : daovoice('show')
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        daovoice('update', {},{
+          launcher: {
+            disableLauncherIcon: true
+          }
+        })
+      },
+      show: () => {
+        daovoice('update', {}, {
+          launcher: {
+            disableLauncherIcon: false
+          }
+        })
+      }
+    }
+  }
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/天涯/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 天涯神贴 (16)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/知乎/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📝 知乎抄录 (80)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/Social-science/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💊 键盘政治学 (41)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/Hexo/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📬 Hexo (14)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://blog.kamasylvia.com/tags" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #9DC5A7;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #d8c7b2}.magnet_link_more{color:#555}.magnet_link{color:white}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>function history_calendar_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-history"><div class="card-content"><div class="item-headline"><i class="fas fa-clock fa-spin"></i><span>那年今日</span></div><div id="history-baidu" style="height: 100px;overflow: hidden"><div class="history_swiper-container" id="history-container" style="width: 100%;height: 100%"><div class="swiper-wrapper" id="history_container_wrapper" style="height:20px"></div></div></div></div>';
+                console.log('已挂载history_calendar')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            history_calendar_injector_config()
+        } </script><script data-pjax  src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><!-- hexo injector body_end end --><script src="/js/markmap.js"></script></body></html>

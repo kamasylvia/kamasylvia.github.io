@@ -1,0 +1,611 @@
+<!DOCTYPE html><html lang="[&quot;en&quot;,&quot;zh-CN&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Quality Management System Documentation [Best Practices] | ༄༊࿆咸鱼の家ོྂཾ࿆࿐</title><meta name="author" content="Laniakea Kamasylvia"><meta name="copyright" content="Laniakea Kamasylvia"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Germans Frolovs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quality Management System Documentation [Best Practices]">
+<meta property="og:url" content="https://blog.kamasylvia.com/p/9b49cb11/index.html">
+<meta property="og:site_name" content="༄༊࿆咸鱼の家ོྂཾ࿆࿐">
+<meta property="og:description" content="Germans Frolovs">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/mieziZ.jpg">
+<meta property="article:published_time" content="2023-08-02T04:31:37.000Z">
+<meta property="article:modified_time" content="2023-10-30T00:50:06.345Z">
+<meta property="article:author" content="Laniakea Kamasylvia">
+<meta property="article:tag" content="KDL">
+<meta property="article:tag" content="QMS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/mieziZ.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.kamasylvia.com/p/9b49cb11/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3769370466946602',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Quality Management System Documentation [Best Practices]',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-30 08:50:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css?v1"><link rel="stylesheet" href="/assets/css/background.css?v1"><link rel="stylesheet" href="/assets/css/corner-indicator.css?v1"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="༄༊࿆咸鱼の家ོྂཾ࿆࿐" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/Mu2eWI.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">195</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">76</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">63</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="༄༊࿆咸鱼の家ོྂཾ࿆࿐"><span class="site-name">༄༊࿆咸鱼の家ོྂཾ࿆࿐</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Quality Management System Documentation [Best Practices]</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-08-02T04:31:37.000Z" title="Created 2023-08-02 12:31:37">2023-08-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-10-30T00:50:06.345Z" title="Updated 2023-10-30 08:50:06">2023-10-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/">Archives</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/KDL/">KDL</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/KDL/%E6%B3%95%E8%A7%84%E6%A0%87%E5%87%86/">法规标准</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/KDL/%E6%B3%95%E8%A7%84%E6%A0%87%E5%87%86/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/KDL/%E6%B3%95%E8%A7%84%E6%A0%87%E5%87%86/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/Fundamental/">Fundamental</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>25min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Quality Management System Documentation [Best Practices]"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="质量管理体系文档">质量管理体系文档</h1>
+<p>In any industry, and particularly so in the life sciences industry, the basis of an organization’s efficient Quality Management System (QMS) is proper documentation.</p>
+<p>As a life science organization, you will understand the importance of quality at all levels. Quality, in fact, is the heart of the life sciences industry. For maintaining such a quality-driven culture, you will need an efficient QMS.</p>
+<p>Going hand-in-hand with an efficient QMS are the documentation processes involved. A well-documented QMS will precisely and crisply highlight your organization’s composition, practices, procedures, and assets.</p>
+<p>Whether you are a new company designing QMS documentation, or an established one looking to restructure it, you will find solutions to many of the questions you may have about this topic. As well as the ways and means of structuring and maintaining efficient QMS documentation.</p>
+<p>In this article, we will look at what QMS documentation is all about – the benefits, requirements, implementation processes, maintenance, and the software required for managing quality documentation.</p>
+<p>Jump to sections:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/qms-documentation/#what-is-quality-management-system-documentation">What is Quality Management System Documentation?</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/qms-documentation/#what-are-the-benefits-of-proper-quality-management-system-documentation">What Are the Benefits of Proper Quality Management System Documentation?</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/qms-documentation/#what-are-the-requirements-for-qms-documentation">What Are the Requirements for QMS Documentation?</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/qms-documentation/#how-to-implement-effective-quality-management-system-documentation">How to Implement Effective Quality Management System Documentation?</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/qms-documentation/#how-to-maintain-quality-management-system-documentation">How to Maintain Quality Management System Documentation?</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/qms-documentation/#software-for-managing-qms-documentation">Software for Managing QMS Documentation</a></li>
+</ul>
+<h2 id="What-is-Quality-Management-System-Documentation">What is Quality Management System Documentation?</h2>
+<p><a target="_blank" rel="noopener" href="https://www.simplerqms.com/quality/qms/what-is/">Quality Management System (QMS)</a> stands for a standard set of protocols, procedures, and responsibilities that enhance the quality of your organization’s products or services to your customers. The QMS will not only meet the requirements of your customers, but it is also a regulatory requirement.</p>
+<p>For your organization to have an efficient QMS in place, it is imperative that the QMS documentation is equally well-planned and well-organized.</p>
+<p>Documentation is a critical requirement for the overall success of an efficient QMS.</p>
+<p>It involves various documents and manuals, including, but not limited to your organization’s:</p>
+<ul>
+<li>Quality policies</li>
+<li>Manuals</li>
+<li>Protocols</li>
+<li>Records</li>
+<li>Work instructions</li>
+</ul>
+<p>The key objectives of QMS documentation are to highlight your organization’s composition, practices, procedures, and assets.</p>
+<p>Let us look at some of the examples to understand this better.</p>
+<p>For example, let’s say you have a medical devices company that is manufacturing various categories of medical devices, including implantable pacemakers. To ensure that the implantable pacemaker is of the utmost quality, will do its intended function, and will not harm the patient in any way, you will need to have an efficient QMS in place. The QMS will ensure that all aspects of your company involved in manufacturing the pacemaker function properly. This will assure your customers and the regulatory agencies.</p>
+<p>Similarly, let’s imagine that your pharmaceutical company is the leading manufacturer of the antiviral agent, remdesivir. How do you assure your end-users that the drug is of the utmost efficacy, and will do its intended function, without harming the patient? This is possible when your QMS is efficiently organized. This will prove to the end-users and the regulatory agencies that the product is safe and efficacious.</p>
+<p>How will you assure them?</p>
+<p>This assurance is provided by the documents and records you have in place for each and every medical device that you manufacture.</p>
+<p>You can now realize the complexity of the documentation processes involved. It is no longer feasible to stick to traditional paper-based QMS systems with their inherent flaws such as storage space, security issues, multiple copies, and huge costs to your company and the environment.</p>
+<p>To eliminate the problems with paper-based QMS systems, more and more companies in the life sciences industry are opting for QMS software solutions such as SimplerQMS. Such software allows for efficient management of all your QMS documentation requirements.</p>
+<p>Nowadays, many new organizations tend to build their QMS using an <a target="_blank" rel="noopener" href="https://www.simplerqms.com/quality-management-system/">Electronic Quality Management System (eQMS)</a>  right from the beginning to avoid migrating at a later stage.</p>
+<h2 id="What-Are-the-Benefits-of-Proper-Quality-Management-System-Documentation">What Are the Benefits of Proper Quality Management System Documentation?</h2>
+<p>With proper streamlined QMS documentation, your organization will gain many benefits, these include the following.</p>
+<h3 id="Regulatory-Compliance">Regulatory Compliance</h3>
+<p>When your QMS is properly documented and up to date, you will meet the quality standards applicable to your organization. You are also audit-ready and will comply with the regulatory guidelines of the market in which your products/services are being provided.</p>
+<p>As an example, if you are marketing your implantable pacemakers in the European Union, you will need to be compliant with ISO 13485:2016, ISO 9001:2015, and EU MDR requirements.</p>
+<h3 id="Enhanced-Brand-Value">Enhanced Brand Value</h3>
+<p>An up-to-date and streamlined QMS will enhance the brand value of your organization.</p>
+<p>Let us say that Hospital X in France has emailed you about some malfunctioning implantable pacemakers. This is a serious issue that needs to be resolved at the earliest. When your QMS documentation is efficient and well-organized, your personnel will be able to access the needed data, trace the problem, and resolve the issue.</p>
+<p>You have resolved the issue, replaced the malfunctioning pacemakers, and Hospital X is most impressed with the resolution. This has not only saved patients’ lives but also enhances the brand value of your organization.</p>
+<p>Similarly, let’s imagine that your pharmaceutical company is one of the leading manufacturers of the antiviral drug, remdesivir. The batch that you have supplied to a leading cancer treatment hospital in Lyon, France, appears to be contaminated. The hospital has urgently updated your company via email and telephone. This issue is very serious and needs to be resolved at the earliest.</p>
+<p>Since your quality documentation system is well-organized, your personnel can access the needed data, trace the problem, and resolve the issue at the earliest.</p>
+<h3 id="Increased-Emphasis-on-Precision">Increased Emphasis on Precision</h3>
+<p>Properly documented QMS protocols and procedures ensure that there are fewer misunderstandings as compared to oral communications. The documents can easily be checked and verified for authenticity. Human error is reduced, and there is reduced reliance on oral communication.</p>
+<p>Let us look at the malfunctioning implantable pacemaker example.</p>
+<p>Hospital X has communicated their issue via telephone. The person at your end, being in a hurry, does not ask all the relevant questions, fails to write down the issue completely, and forgets to inform the supervisor.</p>
+<p>You can understand the consequences of this…</p>
+<p>If you have properly documented QMS protocols in place, these errors will not arise at all.</p>
+<p>Similarly, if the cancer-treatment hospital in Lyon, France, has communicated about the potentially contaminated remdesivir batch only via telephone. The person at your end does not clearly understand the gravity of the situation, and so does not write down the details completely. Also, fails to inform the supervisor.</p>
+<p>The consequences can be disastrous.</p>
+<h3 id="Consistency-in-Day-to-Day-Operations">Consistency in Day-to-Day Operations</h3>
+<p>Your organization will consistently ensure that all protocols and procedures are applied. You will reduce downtime when changes need to be made, and document updating is streamlined.</p>
+<p>Going back to the example with the malfunctioning pacemakers. When the issue has been sorted out, you may have detected that a particular component that is being supplied by a third-party vendor is defective. This will result in changes being made and documents being updated.</p>
+<p>Similarly, take the example of the batch of potentially contaminated remdesivir drug. After the issue is sorted out, you detect that the excipient-sulfobutylether-beta-cyclodextrin that was supplied by a new third-party vendor is the source of the contamination.</p>
+<p>You will need to warn/replace the vendor and update the documents.</p>
+<p>When you have invested in an electronic QMS system such as SimplerQMS, you will see that the above-mentioned benefits are even more noticeable. For example, the SimplerQMS software connects all QMS processes across the entire organization.</p>
+<p>This means that when a change is made in the system, it is immediately updated across the organization. Quality becomes consistent, and everybody is aware of what needs to be done.</p>
+<p><strong>Recommended Reading:</strong> <a target="_blank" rel="noopener" href="https://www.simplerqms.com/benefits-of-quality-management-system/">10 Benefits of a Quality Management System for Life Sciences</a></p>
+<h2 id="What-Are-the-Requirements-for-QMS-Documentation">What Are the Requirements for QMS Documentation?</h2>
+<p>The following are the requirements for QMS documentation:</p>
+<ul>
+<li><strong>Fit-for-Purpose</strong>: When it comes to QMS documentation of your life science organization, a “One-Size-Fits-All” application will not work. Instead, it must be fit-for-purpose. Documents will be of different types, and each one must be relevant for the intended use. This means that the relevant personnel in your organization must be able to comprehend the document meant for them. Also, every person in the organization should have easy access to relevant QMS documents. This will result in a successful execution of the goals of QMS.</li>
+<li><strong>Distinct structure/hierarchy:</strong> The manner in which the QMS is documented will follow a distinct structure or hierarchy. More on this in a bit.</li>
+<li><strong>Leanness is the key:</strong> Another point to be noted with QMS documentation is that these documents must be compact. When you have too many documents detailing the same processes, they will only confuse your personnel and hinder effective working.</li>
+<li><strong>Regulatory compliance:</strong> Your QMS documents must meet regulatory standards at all times. If for some reason, the QMS documents do not meet standards such as GxP, ISO 13485, the US FDA QSR, or others applicable to your organization, you will face a lot of problems, including <a target="_blank" rel="noopener" href="https://www.simplerqms.com/non-conformance/">non-conformances</a>, product recalls, costs, potential harm to end-users, and the reputation of your organization. Rather than facing these problems, it is advisable to comply with all applicable regulatory standards from the beginning.</li>
+</ul>
+<h3 id="Main-QMS-Requirements-for-Pharmaceutical-Companies">Main QMS Requirements for Pharmaceutical Companies</h3>
+<h4 id="ISO-9001-2015">ISO 9001:2015</h4>
+<p><a target="_blank" rel="noopener" href="https://www.iso.org/standard/62085.html">ISO 9001:2015</a> specifies the requirements for a quality management system:</p>
+<blockquote>
+<p><em>“a) Needs to demonstrate its ability to consistently provide products and services that meet customer and applicable statutory and regulatory requirements, and</em></p>
+<p><em>b) Aims to enhance customer satisfaction through the effective application of the system, including processes for improvement of the system and the assurance of conformity to customer and applicable statutory and regulatory requirements.”</em></p>
+</blockquote>
+<h4 id="Current-Good-Manufacturing-Practices-cGMPs">Current Good Manufacturing Practices (cGMPs)</h4>
+<p><a target="_blank" rel="noopener" href="https://www.fda.gov/drugs/pharmaceutical-quality-resources/facts-about-current-good-manufacturing-practices-cgmps">CGMP mentions the requirements</a> for quality management systems, applicable to pharmaceutical manufacturers:</p>
+<blockquote>
+<p><em>“Adherence to the CGMP regulations assures the identity, strength, quality, and purity of drug products by requiring that manufacturers of medications adequately control manufacturing operations. This includes establishing strong quality management systems, obtaining appropriate quality raw materials, establishing robust operating procedures, detecting and investigating product quality deviations, and maintaining reliable testing laboratories.”</em></p>
+</blockquote>
+<p><strong>Recommended Reading:</strong> <a target="_blank" rel="noopener" href="https://www.simplerqms.com/cgmp/">What are Current Good Manufacturing Practices (cGMP)?</a></p>
+<h4 id="ICH-Q10-Pharmaceutical-Quality-System">ICH Q10 Pharmaceutical Quality System</h4>
+<p>Furthermore, <a target="_blank" rel="noopener" href="https://www.ema.europa.eu/en/ich-q10-pharmaceutical-quality-system">ICH Q10 Pharmaceutical Quality System</a> serves as a model for an efficient quality management system (QMS) in the pharmaceutical industry:</p>
+<blockquote>
+<p><em>“The document applies to the development and manufacture of pharmaceutical drug substances and drug products, including biotechnology and biological products, throughout the product lifecycle.”</em></p>
+</blockquote>
+<p>In concise terms, international regulatory agencies mandate that your pharmaceutical company must control and ensure the quality of all manufacturing operations throughout the lifecycle of a given product.</p>
+<p><strong>Recommended Reading</strong></p>
+<hr>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/ich-q10-pharmaceutical-quality-system/">ICH Q10 Pharmaceutical Quality System [Case For an eQMS]</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/pharmaceutical-quality-management-system/">Pharmaceutical Quality Management System (QMS)</a></li>
+</ul>
+<hr>
+<h3 id="Main-QMS-Requirements-for-Medical-Device-Companies">Main QMS Requirements for Medical Device Companies</h3>
+<h4 id="ISO-13485-2016">ISO 13485:2016</h4>
+<p><a target="_blank" rel="noopener" href="https://www.iso.org/standard/59752.html">ISO 13485:2016</a> specifies the requirements for a medical device organization:</p>
+<blockquote>
+<p><em>“needs to demonstrate its ability to provide medical devices and related services that consistently meet customer and applicable regulatory requirements. Such organizations can be involved in one or more stages of the life-cycle, including design and development, production, storage and distribution, installation, or servicing of a medical device and design and development or provision of associated activities (e.g. technical support).”</em></p>
+</blockquote>
+<h4 id="FDA-21-CFR-Part-820">FDA 21 CFR Part 820</h4>
+<p><a target="_blank" rel="noopener" href="https://www.ecfr.gov/current/title-21/chapter-I/subchapter-H/part-820/">FDA 21 CFR Part 820</a> states that:</p>
+<blockquote>
+<p><em>“Each manufacturer shall establish and maintain a quality system that is appropriate for the specific medical device(s) designed or manufactured, and that meets the requirements of this part.”</em></p>
+</blockquote>
+<p>Succinctly, international regulatory agencies mandate that your organization must institute and maintain a QMS that is relevant to the products and services you provide.</p>
+<p>The SimplerQMS cloud-based quality management solution has been developed with its primary focus being life-sciences organizations and their applicable QMS standards. It helps you ensure <a target="_blank" rel="noopener" href="https://www.simplerqms.com/regulatory-compliance/">regulatory compliance</a> with the requirements of the following standards, regulations, and guidelines – ISO 13485, ICH Q10, cGMP, GxP, FDA 21 CFR Part 11, FDA 21 CFR Part 820, EU MDR, EU IVDR, and many more.</p>
+<p><strong>Recommended Reading</strong></p>
+<hr>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/medical-device-quality-management-system/"></a><a target="_blank" rel="noopener" href="https://www.simplerqms.com/medical-device-quality-management-system/">Medical Device Quality Management System (QMS)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/eu-mdr-quality-management-system/">EU MDR Quality Management System [Role of an eQMS]</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/21-cfr-part-820-quality-system-regulation/">21 CFR Part 820 Quality System Regulation [Role of an eQMS]</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/iso-13485-quality-management-system/">ISO 13485 Quality Management System [Role of an eQMS]</a></li>
+</ul>
+<hr>
+<h2 id="How-to-Implement-Effective-Quality-Management-System-Documentation">How to Implement Effective Quality Management System Documentation?</h2>
+<p>For effective QMS documentation, the documentation in your organization could be based on the <strong>PDCA (Plan-Do-Check-Act) cycle</strong>, which aims to promote quality and continual improvement.</p>
+<p>![Plan-Do-Check-Act Cycle Promoting Continuous Improvement](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20720%20480%22%3E%3C/svg%3E)</p>
+<p>In this management method, also known as the Shewhart Cycle or the Deming Cycle, you will:</p>
+<ol>
+<li>Plan what you intend to do</li>
+<li>Do what you intended to do</li>
+<li>Check that you have done it right</li>
+<li>Act if anything went wrong, to avoid potential errors in the future.</li>
+</ol>
+<p>If your organization needs to improve productivity and reduce lead times, you will proceed with the PDCA cycle. The process of structuring and maintaining QMS documentation within the organization also follows such a cycle.</p>
+<p>This is particularly true at the lower levels of the documentation hierarchy, wherein your personnel will strive to effectively and efficiently manage their activities. This is achievable by improving upon their previous activities.</p>
+<p>The PDCA cycle is achieved in 4 key steps that are explained below.</p>
+<h3 id="1-Identify-Documentation">1. Identify Documentation</h3>
+<p>First of all, your organization will have to identify the required documents for implementing the QMS. Mandatory documents are determined by international QMS regulatory standards.</p>
+<p>For example, the ISO 13485 mandatory documentation list contains the following:</p>
+<ul>
+<li>Documented statements of a quality policy and quality objectives</li>
+<li>A quality manual</li>
+<li>Documented procedures and records required by this International Standard</li>
+<li>Documents, including records, are determined by the organization to be necessary to ensure the effective planning, operation, and control of its processes</li>
+<li>Other documentation specified by applicable regulatory requirements</li>
+</ul>
+<p>Additionally, you will determine the medium of storage of these documents, whether as hard copies or as electronic documents in an eQMS software like SimplerQMS.</p>
+<p>The amount of documentation that you require will depend on the size of your organization, and the complexity of the business you are in.</p>
+<p>Process maps will help you document the processes and decide which documents are required.</p>
+<p>Process maps are graphical representations that depict the entire process from beginning to end. They will have inputs and outputs of the process, actions and accountability, pathways, decision points, key measures, targets, and, interface with other processes.</p>
+<p>For example, a representative <a target="_blank" rel="noopener" href="https://www.simplerqms.com/medical-device-complaint-handling/">medical device customer complaint handling</a> process map is illustrated below. It demonstrates how customer complaints are received and processed till closure.</p>
+<p>![Medical Device Complaint Handling Process Flowchart](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20720%20480%22%3E%3C/svg%3E)</p>
+<p>Once you have the process mapped out, you will be able to identify the required documents at each stage of the process.</p>
+<p>You will realize that your organization will need various documentation to cover all sections of applicable standards. This will also depend on the complexity of your business.</p>
+<p>If you choose to build your QMS documentation and implement the SimplerQMS solution at the same time, one of the tasks that will get completed by the combined actions of your organization’s personnel and the SimplerQMS project manager is a review of your current QMS documentation and a GAP analysis between the current QMS content and regulatory requirements. This will give you a complete overview of what needs to be done to help you ensure your QMS is up to date and compliant.</p>
+<p>SimplerQMS also offers a complete range of QMS templates and procedures that can be used to develop, implement, and maintain an <a target="_blank" rel="noopener" href="https://www.simplerqms.com/effective-quality-management-system/">effective Quality Management System (QMS)</a>. These templates are based on ISO 13485 standard and can be easily customized as per your organizational requirements. Alternatively, you are free to use your own document templates within the SimplerQMS solution.</p>
+<h3 id="2-Determine-the-Structure-of-QMS-Documentation">2. Determine the Structure of QMS Documentation</h3>
+<p>How you structure your QMS documentation will depend on your organization’s processes, or it could be based on the structure of applicable quality standards. It could also be a combination of both.</p>
+<p>With the QMS Documentation Pyramid (also called the Quality Management System Document Hierarchy) it is easy to facilitate the distribution, maintenance, and understanding of the documentation processes.</p>
+<p>![Quality Management System Document Pyramid](data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20720%20480%22%3E%3C/svg%3E)</p>
+<p>Here, all documentation will move from one level to another in descending order. When the system is properly structured, changes at one level can somewhat affect the level above it but may considerably affect the levels below.</p>
+<p>Let’s describe each level of documentation in more detail.</p>
+<ul>
+<li><strong>Quality policy:</strong> It states your organization’s commitment to both quality and continuous improvement.</li>
+<li><strong>Quality manuals:</strong> The manual will describe the existing QMS and what your organization is doing to implement the QMS.</li>
+<li><strong>Quality procedures:</strong> This describes how your organization is implementing the QMS by documenting all processes in the form of texts, flowcharts, tables, etc.</li>
+<li><strong>Work instructions:</strong> They are similar to procedures but will include details of activities that are yet to be realized. Work instructions focus on the methods, tools, and steps that need to be used.</li>
+</ul>
+<p>Two often misunderstood terms are document and record. It is important to understand the difference between the two.</p>
+<p>The main difference is that documents detail what needs to be done (planning stage), while records are created after the event has taken place. The former can be revised, while the latter cannot change.</p>
+<p>However, ISO 9001:2015 no longer differentiates between them. Both documents and records are now referred to as <a target="_blank" rel="noopener" href="https://the9000store.com/iso-9001-2015-requirements/iso-9001-2015-required-support-resources/iso-9001-2015-detail-documented-information/">“documented information”</a>.</p>
+<h3 id="3-Produce-the-Required-Documentation">3. Produce the Required Documentation</h3>
+<p>The most difficult part is generating documents. Most organizations will choose the help of outside consultants to help them with document generation.</p>
+<p>As already stated, documents must be lean and the processes detailed. Documents should facilitate the effective implementation of QMS processes.</p>
+<p>With good, streamlined documentation, your organization’s effectiveness and efficiency are enhanced. This is because your QMS will have a strong foundation to work on.</p>
+<p>Documents need to be generated by the process owners who are the best people to understand a particular process.</p>
+<p>When preparing QMS documents, the first documents are the quality procedures. The first of these is the document control procedure that will describe the framework of all QMS documents. It is, in a sense, the first building block of your organization’s QMS documentation.</p>
+<p>The document control procedure needs to address the given points:</p>
+<ul>
+<li>Review and approve documents based on their adequacy before release</li>
+<li>Review and update documents as and when required</li>
+<li>Identify the correct revision status and changes made to every document</li>
+<li>Ensure that relevant updated versions of applicable documents are kept at each point of use</li>
+<li>Ensure that these documents are legible and identifiable</li>
+<li>Ensure that external documents can be readily identified and that their distribution is tightly controlled</li>
+<li>Ensure that documents are not lost or damaged</li>
+<li>Ensure that obsolete versions of documents are not in circulation</li>
+</ul>
+<p>As the next step, you will produce quality procedure documents as mandated by the applicable quality standard that your organization is mandated to follow.</p>
+<p>With these, you will now be able to generate the quality manual.</p>
+<p>Your organization will generate documents that are needed to cover applicable sections of regulatory standards. These are the last set of documents generated.</p>
+<p>After this, you will generate work instructions. Ensure that you double-check these instructions and make certain that they align with the quality manual.</p>
+<p><strong>Recommended Reading:</strong> <a target="_blank" rel="noopener" href="https://www.simplerqms.com/document-control/">What is Document Control in Life Sciences?</a></p>
+<h3 id="4-Implement-Quality-Management-Document-System">4. Implement Quality Management Document System</h3>
+<p>The document control procedure will also dictate how your QMS document system should be implemented.</p>
+<p>All documents must be readily identifiable, controlled, comprehensible, and retrievable. They will be made available at all points of use and must be reviewed regularly throughout the lifecycle of the service or product that your organization is providing.</p>
+<p>For example, the warehouse needs to have relevant QMS documentation relevant to them. What if they are supplied with QMS documentation on marketing?</p>
+<p>As soon as you plan your QMS documentation, or soon after implementing it, you may choose to implement an eQMS such as SimplerQMS. At SimplerQMS, we use a fast and proven <a target="_blank" rel="noopener" href="https://www.simplerqms.com/eqms-implementation/">eQMS implementation method</a> that will typically take 5-6 weeks to complete.</p>
+<p><a target="_blank" rel="noopener" href="https://www.simplerqms.com/implementation/">The SimplerQMS implementation process</a> will start by analyzing the needs of your organization and will continue through configuration, training, migration, and an incremental launch of all SimplerQMS modules. The SimplerQMS product manager will help you prepare a plan of action and assign your staff to key QMS processes.</p>
+<h2 id="How-to-Maintain-Quality-Management-System-Documentation">How to Maintain Quality Management System Documentation?</h2>
+<p>Now that your QMS documentation is built, you will need to ensure that it is properly maintained throughout the lifecycle of every product or service that you provide.</p>
+<p>Maintenance of documents will be performed according to the document control procedure, and all actions will be taken for the continuous improvement of both the efficiency and efficacy of your QMS.</p>
+<p>Here are the key steps you can take to ensure that your Quality Management System Documentation is properly maintained:</p>
+<ol>
+<li><strong>Implement an efficient eQMS:</strong> An efficient eQMS such as SimplerQMS will provide you with robust document control functionality. Benefits include automated workflows such as document routing, review and approval processes, out-of-the-box regulatory compliance, enhanced traceability, ready access to documents from anywhere in the world, and much more.</li>
+<li><strong>Regular review:</strong> Review all your QMS documents regularly and evaluate if any changes are required. You may need to update and improve based on audits, training, changes in processes, etc.</li>
+<li><strong>Regulatory compliance:</strong> All your QMS documents must be maintained following your document control procedure which will help ensure that you are compliant with all regulatory standards.</li>
+</ol>
+<h2 id="Software-for-Managing-QMS-Documentation">Software for Managing QMS Documentation</h2>
+<p>If your organization is into traditional paper-based documentation, you would have come across many difficulties, including handling and maintaining different versions, lack of storage space, need for security, lack of control, and so on.</p>
+<p>You can eliminate these problems when you invest in the SimplerQMS solution.</p>
+<p>SimplerQMS provides an off-the-shelf, yet powerful <a target="_blank" rel="noopener" href="https://www.simplerqms.com/quality/document-control-software/quality-management/">Quality Document Management Software</a> solution that helps you save time and stay compliant with quality standards applicable to organizations in the life science industry.</p>
+<p>SimplerQMS provides a broad quality processes support, electronic signatures, document versioning, and a complete, time-stamped audit trail for every document.</p>
+<ul>
+<li>Easily create and manage documents using best-practice forms and templates provided by us or your own forms and templates.</li>
+<li>Utilize automated workflows for review and approval processes based on user roles and responsibilities.</li>
+<li>Set up alerts and notifications to remind users when a document is due for review or update to ensure timely completion of tasks.</li>
+<li>Work in Microsoft Office 365 environments that you are already familiar with.</li>
+</ul>
+<p>With SimplerQMS, is no longer a burden but an opportunity to improve your organization’s QMS documentation processes.</p>
+<h2 id="Final-Thoughts">Final Thoughts</h2>
+<p>Efficient and streamlined documentation is the key to your organization’s quality management system. It is essential for regulatory compliance and to assure the users of the quality and safety of the products and services that you provide to them.</p>
+<p>If you are a new company planning on QMS documentation or an established one with a QMS in place, you will find that investing in an eQMS solution such as SimplerQMS is worth its weight in gold.</p>
+<p>If you are interested in learning more about our QMS software solution, we recommend you <a target="_blank" rel="noopener" href="https://www.simplerqms.com/book-a-demo/">book a demo</a> and talk to our experts. We will be happy to answer any of your questions and demonstrate how SimplerQMS can help you manage your Quality Management System Documentation more efficiently.</p>
+<h1 id="References-参考文献">References 参考文献</h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/qms-documentation/">Quality Management System Documentation [Best Practices]</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://blog.kamasylvia.com">Laniakea Kamasylvia</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://blog.kamasylvia.com/p/9b49cb11/">https://blog.kamasylvia.com/p/9b49cb11/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/KDL/">KDL</a><a class="post-meta__tags" href="/tags/QMS/">QMS</a></div><div class="post_share"><div class="social-share" data-image="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/mieziZ.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/nlzvJy.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/nlzvJy.jpg" alt="WeChat"/></a><div class="post-qr-code-desc">WeChat</div></li><li class="reward-item"><a href="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/IEwsOf.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/IEwsOf.jpg" alt="Alipay"/></a><div class="post-qr-code-desc">Alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/p/fd85bce4/" title="ISO 13485:2016 Compliant QMS [Role of an eQMS]"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/d4mt6a.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">ISO 13485:2016 Compliant QMS [Role of an eQMS]</div></div></a></div><div class="next-post pull-right"><a href="/p/ce7601b/" title="我国青少年抑郁检出率达到 24.6%，为什么青少年抑郁的这么多？受到哪些因素影响？ - 知乎"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/Gx1T3q.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">我国青少年抑郁检出率达到 24.6%，为什么青少年抑郁的这么多？受到哪些因素影响？ - 知乎</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/p/e37d21a1/" title="ISO 7000 — Graphical symbols for use on equipment — Registered symbols"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/vZ55yx.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-19</div><div class="title">ISO 7000 — Graphical symbols for use on equipment — Registered symbols</div></div></a></div><div><a href="/p/1dcdbda4/" title="中英双语完整版 · 质量管理体系术语"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/W4DI1H.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-07</div><div class="title">中英双语完整版 · 质量管理体系术语</div></div></a></div><div><a href="/p/76e4335f/" title="风险管理流程"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/b3eK6d.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-10</div><div class="title">风险管理流程</div></div></a></div><div><a href="/p/b187d42/" title="[ISO 10993-1 (FDA)] I Introduction"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/vH6vUy.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-06</div><div class="title">[ISO 10993-1 (FDA)] I Introduction</div></div></a></div><div><a href="/p/7c451663/" title="[ISO 10993-1 (FDA)] II Scope"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/o0oQoS.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-06</div><div class="title">[ISO 10993-1 (FDA)] II Scope</div></div></a></div><div><a href="/p/1c062eb7/" title="[ISO 10993-1 (FDA)] III Risk Management for Biocompatibility Evaluations"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/zAqlpK.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-06</div><div class="title">[ISO 10993-1 (FDA)] III Risk Management for Biocompatibility Evaluations</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%E6%96%87%E6%A1%A3"><span class="toc-number">1.</span> <span class="toc-text">质量管理体系文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-Quality-Management-System-Documentation"><span class="toc-number">1.1.</span> <span class="toc-text">What is Quality Management System Documentation?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-Are-the-Benefits-of-Proper-Quality-Management-System-Documentation"><span class="toc-number">1.2.</span> <span class="toc-text">What Are the Benefits of Proper Quality Management System Documentation?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Regulatory-Compliance"><span class="toc-number">1.2.1.</span> <span class="toc-text">Regulatory Compliance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Enhanced-Brand-Value"><span class="toc-number">1.2.2.</span> <span class="toc-text">Enhanced Brand Value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Increased-Emphasis-on-Precision"><span class="toc-number">1.2.3.</span> <span class="toc-text">Increased Emphasis on Precision</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Consistency-in-Day-to-Day-Operations"><span class="toc-number">1.2.4.</span> <span class="toc-text">Consistency in Day-to-Day Operations</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-Are-the-Requirements-for-QMS-Documentation"><span class="toc-number">1.3.</span> <span class="toc-text">What Are the Requirements for QMS Documentation?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Main-QMS-Requirements-for-Pharmaceutical-Companies"><span class="toc-number">1.3.1.</span> <span class="toc-text">Main QMS Requirements for Pharmaceutical Companies</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ISO-9001-2015"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">ISO 9001:2015</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Current-Good-Manufacturing-Practices-cGMPs"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">Current Good Manufacturing Practices (cGMPs)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ICH-Q10-Pharmaceutical-Quality-System"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">ICH Q10 Pharmaceutical Quality System</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Main-QMS-Requirements-for-Medical-Device-Companies"><span class="toc-number">1.3.2.</span> <span class="toc-text">Main QMS Requirements for Medical Device Companies</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ISO-13485-2016"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">ISO 13485:2016</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FDA-21-CFR-Part-820"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">FDA 21 CFR Part 820</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-Implement-Effective-Quality-Management-System-Documentation"><span class="toc-number">1.4.</span> <span class="toc-text">How to Implement Effective Quality Management System Documentation?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Identify-Documentation"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. Identify Documentation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Determine-the-Structure-of-QMS-Documentation"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. Determine the Structure of QMS Documentation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Produce-the-Required-Documentation"><span class="toc-number">1.4.3.</span> <span class="toc-text">3. Produce the Required Documentation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Implement-Quality-Management-Document-System"><span class="toc-number">1.4.4.</span> <span class="toc-text">4. Implement Quality Management Document System</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-Maintain-Quality-Management-System-Documentation"><span class="toc-number">1.5.</span> <span class="toc-text">How to Maintain Quality Management System Documentation?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Software-for-Managing-QMS-Documentation"><span class="toc-number">1.6.</span> <span class="toc-text">Software for Managing QMS Documentation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Final-Thoughts"><span class="toc-number">1.7.</span> <span class="toc-text">Final Thoughts</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#References-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">2.</span> <span class="toc-text">References 参考文献</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Laniakea Kamasylvia</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addModeChange('mermaid', runMermaid)
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline.kamasylvia.com/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'object') initWaline()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css').then(() => {
+      getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script><script src="/assets/js/sakura.js?v1"></script><script src='https://unpkg.com/mermaid@{{ mermaid.version }}/dist/mermaid.min.js'></script><script>if (window.mermaid) {mermaid.initialize({{ JSON.stringify( mermaid.options) }});}</script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script>(() => {
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/f8ce9a66.js","daovoice")
+
+  const isChatBtn = true
+  const isChatHideShow = false
+
+  daovoice('init', {
+    app_id: 'f8ce9a66',},{
+    launcher: { 
+      disableLauncherIcon: isChatBtn
+    },
+  });
+  daovoice('update');
+
+  if (isChatBtn) {
+    window.chatBtnFn = () => {
+      const isShow = document.getElementById('daodream-messenger').classList.contains('daodream-messenger-active')
+      isShow ? daovoice('hide') : daovoice('show')
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        daovoice('update', {},{
+          launcher: {
+            disableLauncherIcon: true
+          }
+        })
+      },
+      show: () => {
+        daovoice('update', {}, {
+          launcher: {
+            disableLauncherIcon: false
+          }
+        })
+      }
+    }
+  }
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/天涯/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 天涯神贴 (16)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/知乎/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📝 知乎抄录 (80)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/Social-science/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💊 键盘政治学 (41)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/Hexo/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📬 Hexo (14)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://blog.kamasylvia.com/tags" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #9DC5A7;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #d8c7b2}.magnet_link_more{color:#555}.magnet_link{color:white}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>function history_calendar_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-history"><div class="card-content"><div class="item-headline"><i class="fas fa-clock fa-spin"></i><span>那年今日</span></div><div id="history-baidu" style="height: 100px;overflow: hidden"><div class="history_swiper-container" id="history-container" style="width: 100%;height: 100%"><div class="swiper-wrapper" id="history_container_wrapper" style="height:20px"></div></div></div></div>';
+                console.log('已挂载history_calendar')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            history_calendar_injector_config()
+        } </script><script data-pjax  src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><!-- hexo injector body_end end --><script src="/js/markmap.js"></script></body></html>

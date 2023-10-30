@@ -1,0 +1,646 @@
+<!DOCTYPE html><html lang="[&quot;en&quot;,&quot;zh-CN&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Medical Device Technical File and Its Structure 医疗器械技术文档 | ༄༊࿆咸鱼の家ོྂཾ࿆࿐</title><meta name="author" content="Laniakea Kamasylvia"><meta name="copyright" content="Laniakea Kamasylvia"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Germans Frolovs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Medical Device Technical File and Its Structure 医疗器械技术文档">
+<meta property="og:url" content="https://blog.kamasylvia.com/p/9b1eac2c/index.html">
+<meta property="og:site_name" content="༄༊࿆咸鱼の家ོྂཾ࿆࿐">
+<meta property="og:description" content="Germans Frolovs">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/R2lnAW.jpg">
+<meta property="article:published_time" content="2023-07-24T07:51:13.000Z">
+<meta property="article:modified_time" content="2023-10-30T00:50:06.333Z">
+<meta property="article:author" content="Laniakea Kamasylvia">
+<meta property="article:tag" content="KDL">
+<meta property="article:tag" content="QMS">
+<meta property="article:tag" content="MDR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/R2lnAW.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.kamasylvia.com/p/9b1eac2c/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3769370466946602',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Medical Device Technical File and Its Structure 医疗器械技术文档',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-30 08:50:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css?v1"><link rel="stylesheet" href="/assets/css/background.css?v1"><link rel="stylesheet" href="/assets/css/corner-indicator.css?v1"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="༄༊࿆咸鱼の家ོྂཾ࿆࿐" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/Mu2eWI.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">195</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">76</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">63</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="༄༊࿆咸鱼の家ོྂཾ࿆࿐"><span class="site-name">༄༊࿆咸鱼の家ོྂཾ࿆࿐</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Medical Device Technical File and Its Structure 医疗器械技术文档</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-07-24T07:51:13.000Z" title="Created 2023-07-24 15:51:13">2023-07-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-10-30T00:50:06.333Z" title="Updated 2023-10-30 08:50:06">2023-10-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/">Archives</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/KDL/">KDL</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/KDL/%E6%B3%95%E8%A7%84%E6%A0%87%E5%87%86/">法规标准</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/KDL/%E6%B3%95%E8%A7%84%E6%A0%87%E5%87%86/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Archives/KDL/%E6%B3%95%E8%A7%84%E6%A0%87%E5%87%86/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/Fundamental/">Fundamental</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">7.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>30min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Medical Device Technical File and Its Structure 医疗器械技术文档"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="医疗器械技术文档"><em>医疗器械技术文档</em></h1>
+<h2 id="Foreword-前言">Foreword <em>前言</em></h2>
+<p>As a medical device manufacturer planning to sell your devices in the European Union (EU) market, you will first need to demonstrate compliance with EU regulatory requirements. You will ascertain this conformity by preparing meticulous information about the design, composition, intended use, claims, and clinical evaluations of your medical device, and submit the same in the form of a Medical Device Technical File (also referred to as Technical Documentation).</p>
+<p>作为一家计划在欧洲联盟（EU）市场销售医疗设备的制造商，您首先需要证明符合欧盟的监管要求。您将通过准备关于医疗设备的设计、组成、预期用途、声明和临床评估的详细信息，并以医疗器械技术文件（也称为技术文档）的形式提交来确认符合要求。</p>
+<p>The medical device technical file is a necessary step in the approval process, meaning it is an obligatory regulatory document.</p>
+<p>医疗设备技术文件是批准过程中的必要步骤，意味着它是一份强制性的监管文件。</p>
+<p>But what exactly goes into a medical device technical file?</p>
+<p>但是医疗设备技术文件究竟包括哪些内容？</p>
+<p>And how do you structure it properly?</p>
+<p>如何正确构建它？</p>
+<p>In this article, we’ll answer these questions and more.</p>
+<p>在本文中，我们将回答这些问题和更多内容。</p>
+<h2 id="What-Is-a-Medical-Device-Technical-File-什么是医疗器械技术文件">What Is a Medical Device Technical File? <em>什么是医疗器械技术文件?</em></h2>
+<p>A medical device technical file is a mandatory technical document that your medical devices company will submit to the concerned regulatory authorities in the EU to get approval to sell your medical devices. You will demonstrate that the medical devices that you intend to sell are safe, efficacious, and are solely for their intended use.</p>
+<p>医疗器械技术文件是一份强制性的技术文件，您的医疗器械公司将提交给欧盟相关监管机构，以获得销售医疗器械的批准。您将证明您打算销售的医疗器械是安全、有效的，并且仅用于其预期用途。</p>
+<p>If you look at the North American market, you would have made a 510(K) or a regulatory submission to the US Food and Drugs Administration (US FDA). Well, a medical device technical file is similar but is meant for EU regulatory agencies.</p>
+<p>如果您看一下北美市场，您可能已经向美国食品和药物管理局（FDA）提交了 510(K) 或监管申请。嗯，医疗器械技术文件类似，但是适用于欧盟监管机构。</p>
+<p>Before getting the Conformitè Europëenne (CE) Mark for your medical devices, you will submit the medical devices technical file. It is a requirement for complying with the following regulatory requirements – Medical Devices Directive 93/42/EEC, In Vitro Diagnostic Medical Devices Directive 98/79/EC, and Active Implantable Medical Devices Directive 90/385/EEC.</p>
+<p>在获得医疗器械的欧洲符合性标志（CE 标志）之前，您需要提交医疗器械技术文件。这是符合以下法规要求的必要条件 - 医疗器械指令 93/42/EEC，体外诊断医疗器械指令 98/79/EC 和主动植入医疗器械指令 90/385/EEC。</p>
+<p>Rather than waste precious time and utilize scarce resources in searching for the required documentation when you go about compiling your technical documentation, you will be better off using <a target="_blank" rel="noopener" href="https://www.simplerqms.com/quality/qms/medical-devices/">integrated QMS software for medical devices</a> such as SimplerQMS.</p>
+<p>与其在编制技术文件时浪费宝贵的时间和利用有限的资源来寻找所需的文件，您最好使用集成的医疗器械质量管理软件，如 SimplerQMS。</p>
+<p>The SimplerQMS software provides a set of readily available forms and allows you to link your design control records.</p>
+<p>SimplerQMS 软件提供一套现成的表格，并允许您链接设计控制记录。</p>
+<h2 id="When-Is-a-Technical-File-Required-何时需要技术文件？">When Is a Technical File Required? <em>何时需要技术文件？</em></h2>
+<p>If your medical devices company manufactures different classes of medical devices, and you wish to market the same in the European Union, you will require a medical devices technical file for all these devices.</p>
+<p>如果贵公司生产不同类别的医疗器械，并希望在欧盟市场销售这些产品，您将需要为所有这些器械准备医疗器械技术文件。</p>
+<p>The exceptions to this rule are Class 1 medical devices that are not supplied sterile, and which do not have a measuring function. These products are classified as lower-risk medical devices and need only a self-declaration. You do not require the permission of a Notified Body for the review of technical files.</p>
+<p>这个规定的例外是不供应无菌的 I 类医疗器械，且没有测量功能的器械。这些产品被归类为低风险医疗器械，只需要自我声明。您不需要获得指定机构的许可来审查技术文件。</p>
+<p>Self-declaration here means that your medical devices company will declare to the concerned regulatory authorities that these particular devices are following requisite standards. Basically, you are taking the legal responsibility of defining the legal framework of certain medical devices, which would otherwise have been done by a third party.</p>
+<p>自我声明意味着贵公司将向相关监管机构声明这些特定器械符合必要的标准。基本上，您承担了定义某些医疗器械法律框架的法律责任，否则这将由第三方完成。</p>
+<p>If you are interested in learning more about the different classes of medical devices, check out this <a href="/p/f2805aea/" title="Medical Device Classification Guide 医疗器械分类指南">classification of the medical device</a>.</p>
+<p>如果您对了解医疗器械的不同类别感兴趣，请查阅有关医疗器械分类的指南。</p>
+<p>Irrespective of the class of medical device, or the pathway you are considering taking to enter the EU market, you will need a technical file. If you are planning to approach a Notified Body for your regulatory requirements, they will explicitly verify your technical files.</p>
+<p>无论医疗器械的类别如何，或者您考虑采取何种途径进入欧盟市场，您都需要一个技术文件。如果您计划向通知机构寻求监管要求，他们将明确验证您的技术文件。</p>
+<p>The SimplerQMS software solution provides a single, safe repository for all the necessary documentation for each and every product that your company is submitting for <a href="/p/1bcdd164/" title="CE Marking for Medical Devices [Step-by-Step Guide] 如何获得 CE 认证">CE Marking</a> or 510(K) submission.</p>
+<p>SimplerQMS 软件解决方案为您公司提交 CE 标志或 510(K) 提交的每个产品提供了一个单一、安全的存储库，其中包含所有必要的文档。</p>
+<h2 id="Importance-of-Medical-Device-Technical-Documentation-医疗器械技术文件的重要性">Importance of Medical Device Technical Documentation <em>医疗器械技术文件的重要性</em></h2>
+<p>At the heart of the approval process for your medical devices is the medical device technical documentation. This file is not only required for approval to sell your medical devices in the EU, but they are also subject to regular inspection by the US FDA and <a target="_blank" rel="noopener" href="https://www.simplerqms.com/iso-13485-audit/">ISO 13485:2016 audits</a>.</p>
+<p>在您的医疗器械批准过程中，医疗器械技术文件是核心。这个文件不仅需要在欧盟销售您的医疗器械时才需要，而且还需要定期接受美国 FDA 和 ISO 13485:2016 审核。</p>
+<p>Your medical devices company will meticulously plan and prepare the technical documentation right from the beginning of the development process of a medical device. This implies that the preparation of the technical file goes hand-in-hand with the product development.</p>
+<p>您的医疗器械公司将从医疗器械开发过程的一开始就精心计划和准备技术文件。这意味着技术文件的准备与产品开发密切相关。</p>
+<p>Ensure that the technical file is compiled in a clear and organized format. It must be regularly reviewed and kept up-to-date for all your medical devices.</p>
+<p>确保技术文件以清晰有组织的格式编制。必须定期审查并保持所有医疗设备的最新状态。</p>
+<p>By utilizing <a target="_blank" rel="noopener" href="https://www.simplerqms.com/quality/document-control-software/">robust document control capabilities</a> built-in SimplerQMS solution, you are assured of documentation that is always audit-ready. Whether it is technical files or any other records and approvals for a given product, you are assured of a single repository for all versions, audit trails, and electronic signatures. Plus, you can easily schedule periodic reminder tasks to ensure your documentation is kept up to date.</p>
+<p>通过利用内置的 SimplerQMS 解决方案的强大文档控制功能，您可以确保始终具备审计准备的文档。无论是技术文件还是任何其他产品的记录和批准，您都可以确保有一个单一的存储库，包含所有版本、审计追踪和电子签名。此外，您还可以轻松安排定期提醒任务，以确保您的文档保持最新状态。</p>
+<h2 id="Medical-Device-Technical-File-Requirements-医疗器械技术文件要求">Medical Device Technical File Requirements <em>医疗器械技术文件要求</em></h2>
+<p>According to the <a target="_blank" rel="noopener" href="https://europa.eu/youreurope/business/product-requirements/compliance/technical-documentation-conformity/index_en.htm">EU declaration of conformity (DoC)</a>, the essential rules that your medical devices company must follow when placing your products on the market are as follows:</p>
+<p>根据欧盟合规声明（DoC），您的医疗器械公司在将产品投放市场时必须遵循的基本规则如下：</p>
+<ul>
+<li>
+<p>Before placing your product on the market, ensure that the technical documentation is ready.
+在将产品投放市场之前，请确保技术文件已准备就绪。</p>
+</li>
+<li>
+<p>As soon as you have placed the product on the market, the market surveillance authorities may request the technical document. You should ensure that it is readily made available to them.
+一旦您将产品投放市场，市场监管机构可能会要求提供技术文件。您应确保它能够随时提供给他们。</p>
+</li>
+<li>
+<p>The technical documentation should be kept updated for a period of 10 years from the date you have placed a particular product on the market. This time frame is mandatory unless unequivocally specified elsewhere.
+技术文件应在您将特定产品投放市场的日期起的 10 年内保持更新。除非另有明确规定，否则此时间段是强制性的。</p>
+</li>
+</ul>
+<p>According to <a target="_blank" rel="noopener" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32017R0745#d1e32-108-1">Annex II of the EU MDR 2017/745</a>, the medical device technical file should contain, at the least, the following:</p>
+<p>根据欧盟 <a target="_blank" rel="noopener" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32017R0745#d1e32-108-1">MDR 2017/745 的附录 II</a>，医疗器械技术文件应至少包含以下内容：</p>
+<ul>
+<li>Description and specification of your medical device.
+医疗器械的描述和规格</li>
+<li>Detailed labeling and packaging information.
+详细的标签和包装信息</li>
+<li>Instructions in all the official languages of the member states of the EU.
+欧盟成员国官方语言的说明书</li>
+<li>Information from the sites where your company’s design and manufacturing activities are conducted.
+您公司设计和制造活动所在地的信息</li>
+<li>Pre-clinical and clinical data.
+临床前和临床数据</li>
+<li>Post-market surveillance planning and report.
+市场后监测计划和报告</li>
+<li>Declaration of conformity.
+符合性声明</li>
+</ul>
+<p>Section 4.2.3 Medical Device File of <a target="_blank" rel="noopener" href="https://www.iso.org/obp/ui#iso:std:iso:13485:ed-3:v1:en">ISO 13485:2016</a> states the following.</p>
+<p>ISO 13485:2016 第 4.2.3 节医疗器械文件规定如下。</p>
+<blockquote>
+<p>“For each medical device type or medical device family, the organization shall establish and maintain one or more files either containing or referencing documents generated to demonstrate conformity to the requirement of this International Standard and compliance with applicable regulatory requirements.”</p>
+<p>“对于每种医疗器械类型或医疗器械系列，组织应建立和维护一个或多个文件，其中包含或引用生成的文件，以证明符合本国际标准的要求和适用的监管要求。”</p>
+</blockquote>
+<p>ISO 13485:2016 section 4.2.3 continues by stating the content of the medical device file(s) shall include, but is not limited to the following.</p>
+<p>ISO 13485:2016 第 4.2.3 节继续说明医疗器械文件的内容应包括但不限于以下内容。</p>
+<blockquote>
+<ul>
+<li>general description of the medical device, intended use/purpose, and labelling, including any instructions for use;
+医疗器械的一般描述、预期用途/目的和标签，包括任何使用说明；</li>
+<li>specifications for product;
+产品规格；</li>
+<li>specifications or procedures for manufacturing, packaging, storage, handling, and distribution;
+制造、包装、储存、处理和分销的规格或程序；</li>
+<li>procedures for measuring and monitoring;
+测量和监测的程序；</li>
+<li>as appropriate, requirements for installation;
+如适用，安装要求；</li>
+<li>as appropriate, procedures for servicing.
+如适用，维修程序。</li>
+</ul>
+</blockquote>
+<p>Outside of the EU, MDR does not apply anymore. Hence, different rules will naturally apply.</p>
+<p>在欧盟之外，MDR 不再适用。因此，将自然适用不同的规则。</p>
+<p>Outside of the EU, MDR does not apply anymore. Hence, different rules will naturally apply.</p>
+<p>如果我们看一下美国 FDA，他们要求以三个不同的文件形式提供详细的设备文档，这些文件合并起来类似于欧盟的医疗器械技术文件。</p>
+<p>These files are:</p>
+<p>这些文件包括：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/design-history-file/"><strong>Design History File (DHF)</strong></a><strong>:</strong> This file will demonstrate to the FDA that the medical device’s design was in accordance with an approved design plan.
+设计历史文件（<a target="_blank" rel="noopener" href="https://www.simplerqms.com/design-history-file/">DHF</a>）：此文件将向 FDA 证明医疗设备的设计符合批准的设计计划。</li>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/device-master-record/"><strong>Device Master Record (DMR)</strong></a><strong>:</strong> The DMR contains the complete specifications of the medical device and the specifications for the production processes.
+器械主记录（<a target="_blank" rel="noopener" href="https://www.simplerqms.com/device-master-record/">DMR</a>）：DMR 包含医疗设备的完整规格和生产过程的规格。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.simplerqms.com/device-history-record/">Device History Record (DHR)</a>:</strong> This file needs to contain the following information – dates of manufacture of the product, quantities manufactured and released for distribution. It should also contain the unique device identifier (UDI) or universal product code (UPC) or any other product identifier.
+器械历史记录（<a target="_blank" rel="noopener" href="https://www.simplerqms.com/device-history-record/">DHR</a>）：此文件需要包含以下信息-产品制造日期，生产数量和发布数量。还应包含唯一设备标识符（UDI）或通用产品代码（UPC）或任何其他产品标识符。</li>
+</ul>
+<p>Medical device QMS software like SimplerQMS makes your documentation processes simple and quick, because of its single repository format for all design documentation, including drawings, reports, notes, images, and videos. Your company can easily reference these files for protocols, procedures, components, suppliers, types of equipment, and processes.</p>
+<p>医疗器械 QMS 软件（如 SimplerQMS）使您的文档流程简单快捷，因为它采用单一存储库格式存储所有设计文档，包括图纸、报告、笔记、图片和视频。您的公司可以轻松参考这些文件以获取协议、程序、组件、供应商、设备类型和流程。</p>
+<p>Medical device QMS software like SimplerQMS makes your documentation processes simple and quick, because of its single repository format for all design documentation, including drawings, reports, notes, images, and videos. Your company can easily reference these files for protocols, procedures, components, suppliers, types of equipment, and processes.</p>
+<p>通过这种方式，您将能够轻松创建完全可追溯和符合法规的技术文档。</p>
+<h2 id="Medical-Device-Technical-File-Contents-医疗器械技术文件内容">Medical Device Technical File Contents <em>医疗器械技术文件内容</em></h2>
+<p>The technical documentation that you maintain for each of your products must be properly structured.</p>
+<p>您为每个产品维护的技术文件必须被正确地结构化。</p>
+<p>This is of utmost importance since it will help the regulatory inspectors clearly understand the contents of the medical device technical file.</p>
+<p>这是至关重要的，因为它将帮助监管检查员清楚地了解医疗器械技术文件的内容。</p>
+<p>Furthermore, when the technical documentation is properly structured, you are benefitted by being able to readily access different sections to update them as and when required.</p>
+<p>此外，当技术文件被正确地结构化时，您将受益于能够随时访问不同的部分以进行更新。</p>
+<p>The contents of the medical device technical file should contain, at the minimum, the following details according to the <a target="_blank" rel="noopener" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32017R0745#d1e32-108-1">EU MDR 2017.745</a>:</p>
+<p>医疗器械技术文件的内容应根据欧盟 MDR 2017.745 至少包含以下细节：</p>
+<ul>
+<li><strong>Description of the device and specification:</strong> In this section, you will include the product or trade name, along with a general description of the medical device. You will also include a unique device identification (UDI) number for each medical device.
+设备描述和规格：在此部分，您将包括产品或商标名称，以及医疗器械的一般描述。您还将为每个医疗器械提供唯一设备识别（UDI）号码。</li>
+<li><strong>Labeling and usage instructions:</strong> This section will contain the device labels and their packaging details. Depending on the member state where you plan to market the device, the instructions should be in the official language of that state.
+标签和使用说明：此部分将包含设备标签及其包装细节。根据您计划在市场上销售设备的成员国，说明书应使用该国的官方语言。</li>
+<li><strong>Design and manufacturing details:</strong> Here you will provide information on the various design stages of the device. Also, information and specifications on the various manufacturing processes.
+设计和制造细节：在这里，您将提供有关设备各个设计阶段的信息。还有有关各种制造过程的信息和规格。</li>
+<li><strong>Safety and performance requirements:</strong> You will provide evidence stating that the device is safe and performs according to its intended purpose.
+安全和性能要求：您将提供证据，证明该设备安全，并按照其预期用途进行工作。</li>
+<li><strong>Product verification and validation:</strong> In this section, you will provide pre-clinical and clinical data to verify and validate your medical device.</li>
+<li>产品验证和验证：在此部分，您将提供临床前和临床数据来验证和验证您的医疗器械。</li>
+</ul>
+<p>To find out more about the various technical documents required by the MDR, see <a target="_blank" rel="noopener" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32017R0745#d1e32-108-1">Annex II (Technical Documentation)</a> and <a target="_blank" rel="noopener" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32017R0745#d1e32-112-1">Annex III (Technical Documentation on Post-Market Surveillance)</a>.</p>
+<p>要了解 MDR 所需的各种技术文件，请参阅附录 II（技术文件）和附录 III（市场后监测技术文件）。</p>
+<p>Most medical device technical files follow the Summary Technical Document (STED). This document brings standardization for medical device submissions to regulatory agencies across markets.</p>
+<p>大多数医疗器械技术文件遵循摘要技术文件（STED）。该文件为医疗器械提交给监管机构的标准化提供了便利。</p>
+<p>At present, STED is recognized by Europe, the USA, Australia, and Japan.</p>
+<p>目前，STED 已被欧洲、美国、澳大利亚和日本认可。</p>
+<p>Some Notified Bodies across Europe also publish extensive documents that describe how technical files need to be formatted.</p>
+<p>欧洲的一些通知机构还发布了详细的文件，描述了技术文件的格式要求。</p>
+<h2 id="Medical-Device-Technical-File-Example-医疗器械技术文件示例">Medical Device Technical File Example <em>医疗器械技术文件示例</em></h2>
+<p>Here is an example of what a medical device technical file folder structure could look like in the SimplerQMS solution.</p>
+<p>这是一个医疗设备技术文件夹结构的示例，可以在 SimplerQMS 解决方案中看到。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.simplerqms.com/wp-content/uploads/2022/05/simplerqms-medical-device-technical-file-view.jpg" alt="" loading="lazy"></p>
+<p>值得注意的是，SimplerQMS 软件中的相同文档可以与多个档案相关联，例如医疗器械技术文件、CE 标志、510(K)、DMR、DHF 和 DHR。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.simplerqms.com/wp-content/uploads/2022/05/simplerqms-design-control-document-views.jpg" alt="" loading="lazy"></p>
+<p>This is very useful as it prevents duplication of the same file.</p>
+<p>这非常有用，因为它可以防止同一文件的重复。</p>
+<p>Here is another example of how you could structure, for example, your Design History File in SimplerQMS.</p>
+<p>以下是另一个示例，说明您可以如何在 SimplerQMS 中构建您的设计历史文件。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.simplerqms.com/wp-content/uploads/2022/05/simplerqms-design-history-file-view.jpg" alt="" loading="lazy"></p>
+<p>Lastly, when it’s time to compile your technical documentation, for example, for a regulatory submission you can easily make a snapshot of current documentation for each product and share it externally.</p>
+<p>最后，当编译您的技术文档时，例如，用于监管提交，您可以轻松地为每个产品制作当前文档的快照并与外部共享。</p>
+<h2 id="Medical-Device-Technical-File-Checklist-医疗器械技术文件清单">Medical Device Technical File Checklist <em>医疗器械技术文件清单</em></h2>
+<p>The main checklist items that your company should remember when structuring the medical device technical file are as given below.</p>
+<p>在构建医疗器械技术文件时，您的公司应记住的主要清单项目如下。</p>
+<ul>
+<li><strong>Device description and specs:</strong> This will include a general description of the product, including technical specs, and product/trade name with the UDI.
+设备描述和规格：这将包括产品的一般描述，包括技术规格和带有 UDI 的产品/商标名称。</li>
+<li><strong>Information supplied by manufacturer:</strong> Here, you will provide the instructions for use (description and specifications, purpose, warnings – if any, and precautions). In addition, this section will contain information on packaging and labeling, with hazard symbols, handling instructions, and manufacture and expiry date.
+制造商提供的信息：在这里，您将提供使用说明（描述和规格，用途，警告-如果有的话，以及预防措施）。此外，本节将包含有关包装和标签的信息，包括危险符号，操作说明以及制造和过期日期。</li>
+<li><strong>Design and manufacturing information:</strong> In this section, you will explain the schematics of the design of your product or <a href="/p/76c418d4/" title="Design Controls for Medical Devices 医疗器械设计开发">design controls</a>, the manufacturing process, information on all manufacturing sites, and the various quality control protocols.
+设计和制造信息：在本部分中，您将解释产品设计或设计控制的原理图，制造过程，所有制造地点的信息以及各种质量控制协议。</li>
+<li><strong>General safety and performance requirements:</strong> You will include the verification and validation report (which will include amongst other details, biocompatibility testing documentation), comprehensive clinical evaluation reports, biological evaluation reports, and <a target="_blank" rel="noopener" href="https://www.simplerqms.com/post-market-surveillance/">post-market surveillance</a> plan and reports.
+一般安全和性能要求：您将包括验证和验证报告（其中包括生物相容性测试文件），全面的临床评估报告，生物评估报告以及市场后监测计划和报告。</li>
+<li><strong>Risk assessment:</strong> The risk assessment section of your technical file must contain all details about the product safety risk management system right through the lifecycle of your product.
+风险评估：技术文件的风险评估部分必须包含有关产品安全风险管理系统的所有细节，直到产品的整个生命周期。</li>
+<li><strong>Declaration of conformity:</strong> We know that the medical device technical file is a mandatory document. In this regard, the last section of the document will have the names and signatures of the manufacturer or authorized representatives declaring that your products comply will all required EU regulatory requirements.
+符合性声明：我们知道医疗器械技术文件是一份强制性文件。在这方面，文件的最后部分将包含制造商或授权代表的姓名和签名，声明您的产品符合所有必需的欧盟法规要求。</li>
+</ul>
+<h2 id="How-is-a-Medical-Device-Technical-File-Reviewed-医疗器械技术文件如何审核？">How is a Medical Device Technical File Reviewed? <em>医疗器械技术文件如何审核？</em></h2>
+<p>For conformity assessment, the concerned Notified Body will review the technical documentation that you provide in accordance with the <a href="/p/f2805aea/" title="Medical Device Classification Guide 医疗器械分类指南">classification of the medical device</a>.</p>
+<p>对于符合性评估，相关的通知机构将根据医疗器械的分类，审查您提供的技术文件。</p>
+<p>This means that each device is assessed based on a risk-based approach.</p>
+<p>这意味着每个设备都将根据基于风险的方法进行评估。</p>
+<p>The benefits of the medical device must offset any risks. Or, any perceivable risks must be reduced as much as possible and such risks should be acceptable considering current state-of-the-art technologies.</p>
+<p>医疗器械的好处必须抵消任何风险。或者，任何可察觉的风险必须尽量减少，并且应考虑到当前最先进的技术。</p>
+<p>Also, these risks should be acceptable across the validity period of the certificates.</p>
+<p>此外，这些风险应在证书的有效期内可接受。</p>
+<p>Let us take a closer look at the different classes of medical devices:</p>
+<p>让我们仔细看一下不同类别的医疗器械：</p>
+<ul>
+<li>All Class IIb active devices, Class IIb implantable devices (there are some exceptions), Class III devices, and Class III implantable devices will be assessed individually.
+所有 IIb 类主动器械、IIb 类可植入器械（有一些例外情况）、III 类器械和 III 类可植入器械将分别进行评估。</li>
+<li>Other Class IIb medical devices are assessed using at least one device that represents each generic group. This is also the case for Class II devices in general.
+其他 IIb 类医疗器械将使用至少一个代表每个通用组的器械进行评估。这也适用于一般的 II 类器械。</li>
+<li>When Class I devices are considered, those devices that are supplied in a sterile condition, have a measuring function, or have reusable surgical instruments, will be evaluated only for these features. For all other Class I devices. You will declare the conformity of the products.
+当考虑到 I 类器械时，那些以无菌状态提供、具有测量功能或具有可重复使用的外科器械的器械将仅针对这些特征进行评估。对于所有其他 I 类器械，您将宣布产品的符合性。</li>
+</ul>
+<p>Now that the medical device technical file is complete and it is time for submission to a Notified Body, it is good practice that your company internally reviews the documentation.</p>
+<p>现在医疗器械技术文件已经完成，是时候提交给通知机构了，公司内部审查文件是一个好的做法。</p>
+<p>Also, it is a good idea if you carry out an internal audit of it, using a cross-section of personnel from different departments.</p>
+<p>此外，最好进行内部审计，使用来自不同部门的人员进行交叉检查。</p>
+<p>You could also choose an external medical device consultant to do the same. If you are curious about key areas to consider when choosing the right consultant, feel free to read the article on <a target="_blank" rel="noopener" href="https://www.simplerqms.com/medical-device-consulting/">how to choose the right consultant for your medical device organization</a>.</p>
+<p>您也可以选择外部医疗器械顾问来进行相同的工作。如果您对选择合适顾问时需要考虑的关键领域感到好奇，可以阅读有关如何为您的医疗器械组织选择合适顾问的文章。</p>
+<p>SimplerQMS allows you to easily prepare your medical device technical file for review. Using a Document Collection Tool, you can make a “snapshot” of the current documentation status of each product. Once the documentation is complete, you can easily and quickly export the files and share them, for example, with external consultants who have been hired to audit your technical files.</p>
+<p>SimplerQMS 可以帮助您轻松准备医疗器械技术文件以供审查。使用文档收集工具，您可以对每个产品的当前文档状态进行“快照”。一旦文档完成，您可以轻松快速地导出文件并共享，例如与被聘请来审计您的技术文件的外部顾问。</p>
+<h2 id="Software-for-Managing-Medical-Device-Technical-File-管理医疗器械技术文件的软件">Software for Managing Medical Device Technical File <em>管理医疗器械技术文件的软件</em></h2>
+<p>If your medical devices company is still using a manual paper-based system for documentation and other purposes, you will likely have faced many obstacles, including lack of storage space, issues with security, editing, cost, and transport within and outside the organization.</p>
+<p>如果您的医疗器械公司仍在使用手动纸质系统进行文档管理和其他用途，您可能会面临许多障碍，包括存储空间不足、安全性问题、编辑、成本和组织内外的运输问题。</p>
+<p>You will also note that paper-based systems limit your ability to collaborate and communicate.</p>
+<p>您还会注意到，纸质系统限制了您的协作和沟通能力。</p>
+<p>If you look specifically at the medical device technical file, it is clear that it is a living document, in the sense that it has to be up-to-date within the <a target="_blank" rel="noopener" href="https://www.simplerqms.com/medical-device-quality-management-system/">medical device quality management system</a>.</p>
+<p>如果您特别关注医疗器械技术文件，很明显它是一份活动文件，也就是说，它必须在医疗器械质量管理体系内保持最新。</p>
+<p>This becomes difficult if your company is still into manual paper-based systems.</p>
+<p>如果您的公司仍然使用手动纸质系统，这将变得困难。</p>
+<p>These problems are easily eliminated with a robust <a target="_blank" rel="noopener" href="https://www.simplerqms.com/quality/qms/medical-devices/">medical device QMS software solution</a> such as SimplerQMS.</p>
+<p>这些问题可以通过强大的医疗设备 QMS 软件解决，例如 SimplerQMS。</p>
+<p>The advantages are many, for example:</p>
+<p>优势有很多，例如：</p>
+<ul>
+<li>The development of your medical device is accelerated since systems, documentation, and records are all linked in a centralized storage location.
+由于系统、文档和记录都在一个集中存储位置中链接，您的医疗设备的开发加速。</li>
+<li>You can use readily available forms for documenting product development. Else, you can migrate your own forms and procedures into the system.
+您可以使用现成的表格来记录产品开发。否则，您可以将自己的表格和流程迁移到系统中。</li>
+<li>You are well prepared for any audit since all records and approvals for any specific product with versioning, audit trails, and electronic signatures are readily available in a single, cloud-based storage location.
+您对任何审计都做好了准备，因为所有记录和批准以及版本控制、审计追踪和电子签名都可以在一个云存储位置中轻松获取。</li>
+</ul>
+<h2 id="Frequently-Asked-Questions-About-Medical-Device-Technical-File-关于医疗器械技术文件的常见问题">Frequently Asked Questions About Medical Device Technical File <em>关于医疗器械技术文件的常见问题</em></h2>
+<h3 id="What-Is-the-Difference-Between-Technical-Files-and-Design-Dossiers-技术文件和设计档案之间的区别是什么？">What Is the Difference Between Technical Files and Design Dossiers? 技术文件和设计档案之间的区别是什么？</h3>
+<p>The main difference between technical files and design dossiers is that technical files (also referred to as technical documentation) are needed for all Class IIa and IIb medical devices and Class I devices, whereas the specific technical documentation for Class III medical devices is labeled as design dossiers.</p>
+<p>技术文件（也称为技术文件）和设计档案的主要区别在于，所有 IIa 和 IIb 类医疗器械和 I 类器械都需要技术文件，而 III 类医疗器械的具体技术文件被标记为设计档案。</p>
+<p>This means that in the EU, design dossiers are used for the higher-risk medical devices (namely, high-risk Class III medical devices).</p>
+<p>这意味着在欧盟，设计档案用于高风险医疗器械（即高风险 III 类医疗器械）。</p>
+<p>If your company has submitted a Premarket Application (PMA) for a Class III product to the US FDA, you will understand that the design dossier plays a similar role in the EU.</p>
+<p>如果您的公司已向美国 FDA 提交了 III 类产品的预市申请（PMA），您将了解到设计档案在欧盟中发挥类似的作用。</p>
+<h3 id="What-Is-the-Purpose-of-a-Technical-File-技术文件的目的是什么？">What Is the Purpose of a Technical File? <em>技术文件的目的是什么？</em></h3>
+<p>The purpose of a technical file is to demonstrate to the regulatory authorities in the EU that your medical device conforms to all applicable and current regulatory guidelines.</p>
+<p>技术文件的目的是向欧盟的监管机构证明您的医疗设备符合所有适用的和当前的监管准则。</p>
+<h3 id="What-Is-Technical-Documentation-in-the-MDR-什么是-MDR-中的技术文档？">What Is Technical Documentation in the MDR? <em>什么是 MDR 中的技术文档？</em></h3>
+<p>Technical documentation in the MDR is a mandatory requirement. Your company will compile all relevant documents pertaining to a medical device through the entire lifecycle of the product.</p>
+<p>MDR 中的技术文件是强制性要求。您的公司将通过产品的整个生命周期编制所有与医疗设备相关的文件。</p>
+<h2 id="Final-thought-总结">Final thought <em>总结</em></h2>
+<p>As a medical devices manufacturer wishing to sell products in the EU market, you will mandatorily need to maintain the complete information about each product throughout its lifecycle.</p>
+<p>作为一家希望在欧盟市场销售产品的医疗设备制造商，您必须强制性地在整个产品生命周期中保持完整的信息。</p>
+<p>This documentation is called the medical device technical file.</p>
+<p>这份文件称为医疗器械技术文件。</p>
+<p>Since the medical device technical file is a living document that has to be up-to-date with your QMS. This becomes difficult if you are continuing to use manual paper-based documentation systems that have too many lacunae.</p>
+<p>由于医疗器械技术文件是一份必须与您的质量管理体系保持最新的文件。如果您继续使用有太多缺陷的手动纸质文档系统，这将变得困难。</p>
+<p>With the use of the robust SimplerQMS software solution, you are at an advantage as compared to your competitors.</p>
+<p>通过使用强大的 SimplerQMS 软件解决方案，您与竞争对手相比具有优势。</p>
+<p>If you aim to streamline the management of your medical device technical documentation, we recommend you are <a target="_blank" rel="noopener" href="https://www.simplerqms.com/book-a-demo/">booking a tailored demo</a> of the SimplerQMS solution today and consult our system experts.</p>
+<p>如果您希望简化医疗器械技术文件的管理，我们建议您立即预订一次定制的 SimplerQMS 解决方案演示，并咨询我们的系统专家。</p>
+<h1 id="References-参考文献">References <em>参考文献</em></h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.simplerqms.com/medical-device-technical-file/">What is a Medical Device Technical File and How to Structure It?</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://blog.kamasylvia.com">Laniakea Kamasylvia</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://blog.kamasylvia.com/p/9b1eac2c/">https://blog.kamasylvia.com/p/9b1eac2c/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/KDL/">KDL</a><a class="post-meta__tags" href="/tags/QMS/">QMS</a><a class="post-meta__tags" href="/tags/MDR/">MDR</a></div><div class="post_share"><div class="social-share" data-image="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/R2lnAW.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/nlzvJy.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/nlzvJy.jpg" alt="WeChat"/></a><div class="post-qr-code-desc">WeChat</div></li><li class="reward-item"><a href="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/IEwsOf.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/IEwsOf.jpg" alt="Alipay"/></a><div class="post-qr-code-desc">Alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/p/1bcdd164/" title="CE Marking for Medical Devices [Step-by-Step Guide] 如何获得 CE 认证"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/ZKdUPj.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">CE Marking for Medical Devices [Step-by-Step Guide] 如何获得 CE 认证</div></div></a></div><div class="next-post pull-right"><a href="/p/76c418d4/" title="Design Controls for Medical Devices 医疗器械设计开发"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/vo7SLd.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Design Controls for Medical Devices 医疗器械设计开发</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/p/1bcdd164/" title="CE Marking for Medical Devices [Step-by-Step Guide] 如何获得 CE 认证"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/ZKdUPj.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-24</div><div class="title">CE Marking for Medical Devices [Step-by-Step Guide] 如何获得 CE 认证</div></div></a></div><div><a href="/p/76c418d4/" title="Design Controls for Medical Devices 医疗器械设计开发"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/vo7SLd.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-25</div><div class="title">Design Controls for Medical Devices 医疗器械设计开发</div></div></a></div><div><a href="/p/484a695b/" title="EU MDR Quality Management System [Role of an eQMS Software]"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/Gx1T3q.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-01</div><div class="title">EU MDR Quality Management System [Role of an eQMS Software]</div></div></a></div><div><a href="/p/fd85bce4/" title="ISO 13485:2016 Compliant QMS [Role of an eQMS]"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/d4mt6a.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-02</div><div class="title">ISO 13485:2016 Compliant QMS [Role of an eQMS]</div></div></a></div><div><a href="/p/f2805aea/" title="Medical Device Classification Guide 医疗器械分类指南"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/f5MGFB.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-24</div><div class="title">Medical Device Classification Guide 医疗器械分类指南</div></div></a></div><div><a href="/p/3b994756/" title="Medical Device Document Control 医疗器械文档控制"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://api.kamasylvia.com/cdn/image/unsafe/https://cdn.jsdelivr.net/gh/kamasylvia/image-hosting@main/uPic/qQEgSD.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-31</div><div class="title">Medical Device Document Control 医疗器械文档控制</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3"><span class="toc-number">1.</span> <span class="toc-text">医疗器械技术文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Foreword-%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">Foreword 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-Is-a-Medical-Device-Technical-File-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">What Is a Medical Device Technical File? 什么是医疗器械技术文件?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#When-Is-a-Technical-File-Required-%E4%BD%95%E6%97%B6%E9%9C%80%E8%A6%81%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">When Is a Technical File Required? 何时需要技术文件？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Importance-of-Medical-Device-Technical-Documentation-%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-number">1.4.</span> <span class="toc-text">Importance of Medical Device Technical Documentation 医疗器械技术文件的重要性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medical-Device-Technical-File-Requirements-%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%E8%A6%81%E6%B1%82"><span class="toc-number">1.5.</span> <span class="toc-text">Medical Device Technical File Requirements 医疗器械技术文件要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medical-Device-Technical-File-Contents-%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.6.</span> <span class="toc-text">Medical Device Technical File Contents 医疗器械技术文件内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medical-Device-Technical-File-Example-%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.7.</span> <span class="toc-text">Medical Device Technical File Example 医疗器械技术文件示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medical-Device-Technical-File-Checklist-%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%E6%B8%85%E5%8D%95"><span class="toc-number">1.8.</span> <span class="toc-text">Medical Device Technical File Checklist 医疗器械技术文件清单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-is-a-Medical-Device-Technical-File-Reviewed-%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%E5%A6%82%E4%BD%95%E5%AE%A1%E6%A0%B8%EF%BC%9F"><span class="toc-number">1.9.</span> <span class="toc-text">How is a Medical Device Technical File Reviewed? 医疗器械技术文件如何审核？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Software-for-Managing-Medical-Device-Technical-File-%E7%AE%A1%E7%90%86%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%E7%9A%84%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.10.</span> <span class="toc-text">Software for Managing Medical Device Technical File 管理医疗器械技术文件的软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Frequently-Asked-Questions-About-Medical-Device-Technical-File-%E5%85%B3%E4%BA%8E%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.11.</span> <span class="toc-text">Frequently Asked Questions About Medical Device Technical File 关于医疗器械技术文件的常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#What-Is-the-Difference-Between-Technical-Files-and-Design-Dossiers-%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A1%A3%E6%A1%88%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.11.1.</span> <span class="toc-text">What Is the Difference Between Technical Files and Design Dossiers? 技术文件和设计档案之间的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-Is-the-Purpose-of-a-Technical-File-%E6%8A%80%E6%9C%AF%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.11.2.</span> <span class="toc-text">What Is the Purpose of a Technical File? 技术文件的目的是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-Is-Technical-Documentation-in-the-MDR-%E4%BB%80%E4%B9%88%E6%98%AF-MDR-%E4%B8%AD%E7%9A%84%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3%EF%BC%9F"><span class="toc-number">1.11.3.</span> <span class="toc-text">What Is Technical Documentation in the MDR? 什么是 MDR 中的技术文档？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Final-thought-%E6%80%BB%E7%BB%93"><span class="toc-number">1.12.</span> <span class="toc-text">Final thought 总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#References-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">2.</span> <span class="toc-text">References 参考文献</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Laniakea Kamasylvia</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addModeChange('mermaid', runMermaid)
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline.kamasylvia.com/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'object') initWaline()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css').then(() => {
+      getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script><script src="/assets/js/sakura.js?v1"></script><script src='https://unpkg.com/mermaid@{{ mermaid.version }}/dist/mermaid.min.js'></script><script>if (window.mermaid) {mermaid.initialize({{ JSON.stringify( mermaid.options) }});}</script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script>(() => {
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/f8ce9a66.js","daovoice")
+
+  const isChatBtn = true
+  const isChatHideShow = false
+
+  daovoice('init', {
+    app_id: 'f8ce9a66',},{
+    launcher: { 
+      disableLauncherIcon: isChatBtn
+    },
+  });
+  daovoice('update');
+
+  if (isChatBtn) {
+    window.chatBtnFn = () => {
+      const isShow = document.getElementById('daodream-messenger').classList.contains('daodream-messenger-active')
+      isShow ? daovoice('hide') : daovoice('show')
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        daovoice('update', {},{
+          launcher: {
+            disableLauncherIcon: true
+          }
+        })
+      },
+      show: () => {
+        daovoice('update', {}, {
+          launcher: {
+            disableLauncherIcon: false
+          }
+        })
+      }
+    }
+  }
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='all'|| 'all' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/天涯/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 天涯神贴 (16)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/知乎/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📝 知乎抄录 (80)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/Social-science/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💊 键盘政治学 (41)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://blog.kamasylvia.com/tags/Hexo/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📬 Hexo (14)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="https://blog.kamasylvia.com/tags" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #9DC5A7;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #d8c7b2}.magnet_link_more{color:#555}.magnet_link{color:white}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>function history_calendar_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-history"><div class="card-content"><div class="item-headline"><i class="fas fa-clock fa-spin"></i><span>那年今日</span></div><div id="history-baidu" style="height: 100px;overflow: hidden"><div class="history_swiper-container" id="history-container" style="width: 100%;height: 100%"><div class="swiper-wrapper" id="history_container_wrapper" style="height:20px"></div></div></div></div>';
+                console.log('已挂载history_calendar')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            history_calendar_injector_config()
+        } </script><script data-pjax  src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><!-- hexo injector body_end end --><script src="/js/markmap.js"></script></body></html>
